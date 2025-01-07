@@ -1,0 +1,34 @@
+.carousel {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+}
+
+
+.carousel-track {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  justify-content: space-around;
+  gap: 5px;
+  margin: 0 auto;
+}
+
+.carousel-track img {
+  width: calc(33.333% - 6.5px); /* 3 images visibles */
+  height: auto;
+  /* flex: 0 0 calc(33.333% -20px); */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .carousel-track {
+      gap: 15px;
+  }
+
+  .carousel-track img {
+      width: calc(33.333% - 10px);
+  }
+}

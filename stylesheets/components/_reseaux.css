@@ -1,0 +1,19 @@
+.reseaux {
+  text-align: justify;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(211, 211, 245);
+  padding: 10px;
+  width: 100%;
+}
+
+.reseaux h3 {
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.contenu-icons {
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 2;
+}

@@ -1,0 +1,15 @@
+/* // Graphical variables */
+/* @import "config/fonts"; */
+/* @import "config/colors"; */
+@import "config/bootstrap_variables";
+
+/* // External libraries */
+@import "bootstrap";
+@import "font-awesome";
+
+/* // Your CSS partials */
+@import "pages/index.css";
+@import "components/_navbar.css";
+@import "components/_reseaux.css";
+@import "components/_carousel.css";
+@import "components/_cards.css";
