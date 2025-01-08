@@ -1,0 +1,69 @@
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.pottery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.pottery-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.pottery-card:hover {
+  transform: translateY(-5px);
+}
+
+.pottery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.pottery-info {
+  padding: 1rem;
+}
+
+.pottery-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.artist {
+  color: #666;
+  font-style: italic;
+  margin: 0.25rem 0;
+}
+
+.description {
+  color: #777;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+@media (max-width: 1200px) {
+  .pottery-grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .pottery-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .pottery-grid {
+      grid-template-columns: 1fr;
+  }
+}

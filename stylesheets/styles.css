@@ -9,7 +9,11 @@
 
 /* // Your CSS partials */
 @import "pages/index.css";
+@import "pages/_events.css";
+@import "pages/_creations.css";
+@import "pages/_a_propos.css";
 @import "components/_navbar.css";
 @import "components/_reseaux.css";
 @import "components/_carousel.css";
 @import "components/_cards.css";
+@import "components/_footer.css";
