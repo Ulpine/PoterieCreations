@@ -90,3 +90,32 @@
     height: 120px;
   }
 }
+
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+  }
+
+  .navbar .container {
+    position: relative;
+  }
+
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+}

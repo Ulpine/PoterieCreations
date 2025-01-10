@@ -1,8 +1,6 @@
-/* .navbar {
-  background-color: #f8f6ff;
+.navbar {
   padding: 1rem 0;
-  width: 100%;
-} */
+}
 
 .navbar-brand {
   display: flex;
@@ -24,12 +22,40 @@
 }
 
 .nav-link {
-  color: #333;
   text-decoration: none;
-  font-weight: 500;
+  color: #333;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #666;
+  color: #4a77e5;
+}
+
+/* Burger menu styles */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.burger-bar {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Mobile menu active states */
+.burger-menu.active .burger-bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burger-menu.active .burger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active .burger-bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
 }
