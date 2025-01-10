@@ -16,11 +16,11 @@
     text-align: center;
   }
 
-  .navbar-menu {
+  /* .navbar-menu {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-  }
+  } */
 
   .footer .container {
     flex-direction: column;
@@ -52,10 +52,10 @@
     padding: 15px;
   }
 
-  .navbar-brand img {
+  /* .navbar-brand img {
     height: 80px;
     width: 160px;
-  }
+  } */
 
   .cards-container {
     grid-template-columns: repeat(3, 1fr);
