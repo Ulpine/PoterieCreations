@@ -1,5 +1,5 @@
 .carousel {
-  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
@@ -10,17 +10,38 @@
 .carousel-track {
   display: flex;
   transition: transform 1s ease-in-out;
-  justify-content: space-around;
-  gap: 5px;
-  margin: 0 auto;
+  gap: 20px;
+  width: calc(100% + 20px); /* Compensate for the gap */
 }
 
 .carousel-track img {
-  width: calc(33.333% - 6.5px); /* 3 images visibles */
-  height: auto;
-  /* flex: 0 0 calc(33.333% -20px); */
+  min-width: calc((100% - 40px) / 3); /* Account for gaps between 3 images */
+  height: 200px; /* Fixed height for consistency */
   object-fit: cover;
   border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Add smooth fade effect at edges */
+.carousel::before,
+.carousel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.carousel::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.carousel::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
 }
 
 @media (max-width: 768px) {
