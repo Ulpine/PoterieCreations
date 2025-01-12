@@ -23,14 +23,26 @@
   transform: translateY(-5px);
 }
 
+.image-wrapper {
+  position: relative;
+  padding-bottom: 100%;
+  height: 0;
+  overflow: hidden;
+}
+
 .pottery-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
 }
 
 .pottery-info {
   padding: 1rem;
+  position: relative;
+  background: white;
 }
 
 .pottery-info h3 {

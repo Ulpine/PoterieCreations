@@ -6,6 +6,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   width: 100%;
+  margin-bottom: 50px;
 }
 
 .card {
@@ -23,9 +24,9 @@
 
 /* If you want to use background images instead, uncomment and modify these: */
 
-.card:nth-child(1) { background-image: url('../../images/main1.jpg'); }
-.card:nth-child(2) { background-image: url('../../images/main1.jpg'); }
-.card:nth-child(3) { background-image: url('../../images/main1.jpg'); }
+/* .card:nth-child(1) { background-image: url('../../images/artisanal\ pottery\ with\ different\ styles.png'); } */
+/* .card:nth-child(2) { background-image: url('../../images/actualites.jpg'); } */
+/* .card:nth-child(3) { background-image: url('../../images/Blog.png'); } */
 
 
 .card:hover {
