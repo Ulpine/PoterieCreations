@@ -10,8 +10,9 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 30px;
   align-items: center;
+  margin-bottom: 50px;
 }
 
 .wrapper-img {
