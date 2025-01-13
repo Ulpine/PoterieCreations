@@ -70,11 +70,13 @@ h1 {
   .second-wrapper {
     flex-direction: column;
     gap: 20px;
+    text-align: justify;
   }
 
   .second-wrapper-content,
   .wrapper-img {
     flex: 1;
     max-width: 100%;
+    text-align: justify;
   }
 }
