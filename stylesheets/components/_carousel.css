@@ -16,8 +16,8 @@
 
 .carousel-track img {
   min-width: calc((100% - 40px) / 3); /* Account for gaps between 3 images */
-  height: 200px; /* Fixed height for consistency */
-  object-fit: cover;
+  height: 270px; /* Fixed height for consistency */
+  object-fit: fill;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }

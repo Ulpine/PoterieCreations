@@ -35,7 +35,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 105%;
   object-fit: cover;
 }
 
@@ -45,12 +45,16 @@
   background: white;
 }
 
+.image-offset {
+  object-position: center center; /* Adjust these values as needed */
+}
+
 .pottery-info h3 {
   margin: 0 0 0.5rem 0;
   color: #333;
 }
 
-.artist {
+/* .artist {
   color: #666;
   font-style: italic;
   margin: 0.25rem 0;
@@ -60,7 +64,7 @@
   color: #777;
   font-size: 0.9rem;
   margin: 0.5rem 0;
-}
+} */
 
 @media (max-width: 1200px) {
   .pottery-grid {
