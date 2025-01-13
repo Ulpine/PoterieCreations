@@ -1,5 +1,5 @@
 @media screen and (max-width: 768px) {
-  .first-wrapper, .second-wrapper {
+  .first-wrapper {
     flex-direction: column;
     text-align: center;
   }
@@ -9,8 +9,7 @@
     order: 1;
   }
 
-  .first-wrapper-content,
-  .second-wrapper-content {
+  .first-wrapper-content {
     width: 100%;
     order: 2;
     text-align: center;
