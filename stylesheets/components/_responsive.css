@@ -16,26 +16,10 @@
     text-align: center;
   }
 
-  /* .navbar-menu {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  } */
-
   .footer .container {
     flex-direction: column;
     text-align: center;
     gap: 15px;
-  }
-
-  .cards-container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    padding: 0 0.5rem;
-  }
-
-  .card h2 {
-    font-size: 1.2rem;
   }
 }
 
@@ -50,22 +34,6 @@
 
   .footer {
     padding: 15px;
-  }
-
-  /* .navbar-brand img {
-    height: 80px;
-    width: 160px;
-  } */
-
-  .cards-container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-    padding: 0 0.25rem;
-  }
-
-  .card h2 {
-    font-size: 1rem;
-    padding: 0.5rem;
   }
 }
 
