@@ -1,5 +1,6 @@
 .carousel {
   width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
@@ -11,15 +12,18 @@
   display: flex;
   transition: transform 1s ease-in-out;
   gap: 20px;
-  width: calc(100% + 20px); /* Compensate for the gap */
+  width: calc(100% + 20px);
 }
 
 .carousel-track img {
-  min-width: calc((100% - 40px) / 3); /* Account for gaps between 3 images */
-  height: 270px; /* Fixed height for consistency */
-  object-fit: fill;
+  min-width: calc((100% - 60px) / 4);
+  height: 300px;
+  object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border: 2px solid #f0f0f0;
+  padding: 4px;
+  background: #1D499B;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 /* Add smooth fade effect at edges */
@@ -44,12 +48,23 @@
   background: linear-gradient(to left, white, transparent);
 }
 
-@media (max-width: 768px) {
-  .carousel-track {
-      gap: 15px;
-  }
-
+@media (max-width: 1024px) {
   .carousel-track img {
-      width: calc(33.333% - 10px);
+    min-width: calc((100% - 40px) / 3); /* Switch to 3 images */
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-track img {
+    min-width: calc((100% - 20px) / 2); /* Switch to 2 images */
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-track img {
+    min-width: calc(100%); /* Single image */
+    height: 220px;
   }
 }

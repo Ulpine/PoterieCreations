@@ -18,3 +18,8 @@
 @import "components/_cards.css";
 @import "components/_footer.css";
 @import "components/_responsive.css";
+
+body {
+  font-family: Inter, regular;
+  font-size: 20px;
+}

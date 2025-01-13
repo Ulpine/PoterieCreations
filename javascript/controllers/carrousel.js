@@ -3,19 +3,18 @@ const images = track.querySelectorAll('img');
 const totalImages = images.length;
 let currentIndex = 0;
 
-// Clone first few images and append them to the end for smooth infinite scroll
+// Clone first four images instead of three
 const clonedImages = Array.from(images)
-  .slice(0, 3)
+  .slice(0, 4)
   .map(img => img.cloneNode(true));
 clonedImages.forEach(img => track.appendChild(img));
 
 function nextSlide() {
     currentIndex++;
 
-    const offset = -currentIndex * (100 / 3);
+    const offset = -currentIndex * (100 / 4); // Adjusted for 4 images
     track.style.transform = `translateX(${offset}%)`;
 
-    // Reset to start when reaching the end
     if (currentIndex >= totalImages) {
         setTimeout(() => {
             track.style.transition = 'none';
@@ -29,7 +28,7 @@ function nextSlide() {
 }
 
 // Start the carousel
-setInterval(nextSlide, 3000);
+let carouselInterval = setInterval(nextSlide, 3000);
 
 // Pause on hover
 track.addEventListener('mouseenter', () => {
@@ -38,4 +37,4 @@ track.addEventListener('mouseenter', () => {
 
 track.addEventListener('mouseleave', () => {
     carouselInterval = setInterval(nextSlide, 3000);
-  });
+});

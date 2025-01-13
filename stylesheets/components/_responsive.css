@@ -37,29 +37,6 @@
   }
 }
 
-@media (max-width: 768px) {
-  .carousel-track {
-    gap: 15px;
-  }
-
-  .carousel-track img {
-    min-width: calc((100% - 30px) / 3);
-    height: 150px;
-  }
-}
-
-@media (max-width: 576px) {
-  .carousel-track {
-    gap: 10px;
-  }
-
-  .carousel-track img {
-    min-width: calc((100% - 20px) / 3);
-    height: 120px;
-  }
-}
-
-
 /* Media query for mobile devices */
 @media screen and (max-width: 768px) {
   .burger-menu {
