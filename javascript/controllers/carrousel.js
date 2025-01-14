@@ -38,10 +38,15 @@ function nextSlide() {
     const imagesPerView = getImagesPerView();
     currentIndex++;
 
+    // For mobile devices, skip to next image immediately
+    if (window.innerWidth <= 480) {
+        currentIndex = currentIndex % totalImages;
+    }
+
     const offset = -currentIndex * (100 / imagesPerView);
     track.style.transform = `translateX(${offset}%)`;
 
-    if (currentIndex >= totalImages) {
+    if (currentIndex >= totalImages && window.innerWidth > 480) {
         setTimeout(() => {
             track.style.transition = 'none';
             currentIndex = 0;
@@ -74,5 +79,31 @@ track.addEventListener('mouseenter', () => {
 });
 
 track.addEventListener('mouseleave', () => {
+    carouselInterval = setInterval(nextSlide, 3000);
+});
+
+// Add touch support
+let touchStartX = 0;
+let touchEndX = 0;
+
+track.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    clearInterval(carouselInterval);
+});
+
+track.addEventListener('touchmove', (e) => {
+    touchEndX = e.touches[0].clientX;
+});
+
+track.addEventListener('touchend', () => {
+    const swipeDistance = touchStartX - touchEndX;
+    if (Math.abs(swipeDistance) > 50) { // Minimum swipe distance
+        if (swipeDistance > 0) {
+            nextSlide();
+        } else {
+            currentIndex = (currentIndex - 2 + totalImages) % totalImages;
+            nextSlide();
+        }
+    }
     carouselInterval = setInterval(nextSlide, 3000);
 });
