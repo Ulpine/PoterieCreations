@@ -1,5 +1,43 @@
+h1 {
+  font-size: 2.5rem;
+  color: #1D499B;
+  margin: 3rem 0 2rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+/* Decorative line under h1 */
+h1:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to right, #f8f6ff, #4a77e5, #f8f6ff);
+}
+
+/* Main h3 (the one under h1) */
+h4 {
+  font-size: 1.2rem;
+  color: #666; /* Matches your existing text colors */
+  text-align: center;
+  margin: 1rem 0 2.5rem;
+  font-weight: 500;
+}
+
+.event-content h3 {
+  font-size: 1.25rem;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-weight: 600;
+}
+
 .events-feed {
-  max-width: 800px;
+  max-width: 900px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
@@ -19,36 +57,49 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 80px;
+  min-width: 100px;
+  width: 110px;
+  height: 110px;
   padding: 0.5rem;
   background: #f8f6ff;
   border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(74, 119, 229, 0.1);
 }
 
 .date {
-  font-size: 1.8rem;
+  font-size: 1.5rem; /* Reduced from 1.8rem */
   font-weight: bold;
-  color: #4a77e5;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+  text-align: center;
+  width: 100%;
+  color: #1D499B;
 }
 
-.month, .year {
+.month {
   font-size: 0.9rem;
   color: #666;
+  margin: 0.1rem 0;
+  text-align: center;
+}
+
+
+.year {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
 }
 
 .event-content {
   flex: 1;
 }
 
-.event-content h3 {
-  margin: 0 0 0.5rem 0;
-  color: #333;
-}
-
 .event-time {
-  color: #4a77e5;
+  color: #1D499B;
   font-weight: 500;
   margin: 0.5rem 0;
+  text-align: center;
 }
 
 .event-description {
@@ -62,15 +113,126 @@
   margin-top: 1rem;
   color: #666;
   font-size: 0.9rem;
+  justify-content: space-around;
 }
 
-@media (max-width: 600px) {
+/* Your existing CSS remains the same until the media queries */
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    margin: 2rem 0 1.5rem;
+  }
+
+  h3:not(.event-content h3) {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
   .event-card {
-      flex-direction: column;
-      gap: 1rem;
+    gap: 1.5rem;
+    padding: 1.25rem;
+  }
+
+  .event-details {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.75rem;
+    margin: 1.5rem 0 1rem;
+  }
+
+  h3:not(.event-content h3) {
+    font-size: 1rem;
+  }
+
+  .event-card {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
   }
 
   .event-date {
-      align-self: flex-start;
+    align-self: center;
+    width: 100px;
+    height: 100px;
   }
+
+  .date {
+    font-size: 1.3rem;
+  }
+
+  .month {
+    font-size: 0.85rem;
+  }
+
+  .year {
+    font-size: 0.75rem;
+  }
+
+  .event-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .event-time {
+    text-align: center;
+  }
+
+  .event-description {
+    text-align: center;
+  }
+
+  .event-details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .location, .spots {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Additional media query for very small devices */
+@media (max-width: 350px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .event-card {
+    padding: 0.75rem;
+  }
+
+  .event-date {
+    width: 90px;
+    height: 90px;
+  }
+
+  .date {
+    font-size: 1.2rem;
+  }
+
+  .event-details {
+    font-size: 0.8rem;
+  }
+}
+
+/* Add styles for the email link */
+.event-details a {
+  color: #1D499B;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.event-details a:hover {
+  color: #4a77e5;
+  text-decoration: underline;
 }

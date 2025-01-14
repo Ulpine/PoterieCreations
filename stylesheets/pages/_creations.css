@@ -39,33 +39,16 @@
   object-fit: cover;
 }
 
-.pottery-info {
-  padding: 1rem;
-  position: relative;
-  background: white;
-}
-
 .image-offset {
   object-position: center center; /* Adjust these values as needed */
 }
 
 .pottery-info h3 {
   margin: 0 0 0.5rem 0;
-  color: #333;
+  color: #1D499B;
   text-align: center;
+  padding: 15px;
 }
-
-/* .artist {
-  color: #666;
-  font-style: italic;
-  margin: 0.25rem 0;
-}
-
-.description {
-  color: #777;
-  font-size: 0.9rem;
-  margin: 0.5rem 0;
-} */
 
 @media (max-width: 1200px) {
   .pottery-grid {

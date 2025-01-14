@@ -65,6 +65,11 @@ h1 {
   color: #1D499B;
 }
 
+h2 {
+  font-size: 36px;
+  color: #1D499B;
+}
+
 /* Add responsive handling */
 @media (max-width: 768px) {
   .second-wrapper {
