@@ -12,6 +12,7 @@
 @import "pages/_events.css";
 @import "pages/_creations.css";
 @import "pages/_a_propos.css";
+@import "pages/_blog.css";
 @import "components/_navbar.css";
 @import "components/_reseaux.css";
 @import "components/_carousel.css";
@@ -19,7 +20,7 @@
 @import "components/_footer.css";
 @import "components/_responsive.css";
 
-body {
+body p {
   font-family: Inter, regular;
   font-size: 16px;
 }
