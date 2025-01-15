@@ -24,3 +24,12 @@ body p {
   font-family: Inter, regular;
   font-size: 16px;
 }
+
+/* Add this at the beginning of your main CSS file */
+body {
+  background-color: #fffbf9;  /* Warm white base color */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="pottery-pattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse"><path d="M40 80 C40 70, 35 65, 35 60 C35 55, 38 50, 42 50 C46 50, 49 55, 49 60 C49 65, 44 70, 44 80 L46 90 L38 90 Z" fill="%23faf3ef" stroke="%23d4aa8f" stroke-width="1" opacity="0.3"/><path d="M140 60 C140 67, 130 70, 120 70 C110 70, 100 67, 100 60 C100 53, 110 50, 120 50 C130 50, 140 53, 140 60" fill="%23f7e8e0" stroke="%23c49b83" stroke-width="1" opacity="0.2"/><path d="M160 140 C160 130, 155 125, 155 115 C155 110, 158 105, 162 105 C166 105, 169 110, 169 115 C169 125, 164 130, 164 140 L166 150 L158 150 Z" fill="%23fdf5f1" stroke="%23b88a72" stroke-width="1" opacity="0.25"/><ellipse cx="80" cy="140" rx="15" ry="5" fill="%23fcf1eb" stroke="%23ac7d65" stroke-width="1" opacity="0.2"/></pattern></defs><rect width="100%" height="100%" fill="%23fffbf9"/><rect width="100%" height="100%" fill="url(%23pottery-pattern)"/></svg>');
+  background-repeat: repeat;
+  /* Optional: if you want to ensure the background stays fixed while scrolling */
+  background-attachment: fixed;
+}

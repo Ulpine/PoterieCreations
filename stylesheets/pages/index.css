@@ -60,6 +60,11 @@
   padding: 10px 50px;
 }
 
+.btn:hover {
+  background-color: #1D499B;
+  color: rgb(199, 199, 199);
+}
+
 h1 {
   font-size: 48px;
   color: #1D499B;
