@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <script src="./javascript/controllers/carrousel.js" defer></script>
     <script src="./javascript/controllers/burger.js" defer></script>
+    <script src="./javascript/controllers/creations.js" defer></script>
   </head>
 <body>
   <nav class="navbar navbar-expand-lg">
@@ -37,6 +38,12 @@
   </nav>
 
   <div class="gallery-container">
+    <!-- Add this after your gallery-container div -->
+<div id="imageModal" class="modal">
+  <span class="close-button">&times;</span>
+  <img id="modalImage" class="modal-content" alt="Enlarged pottery">
+  <div id="modalCaption"></div>
+</div>
     <div class="pottery-grid">
       <div class="pottery-card">
         <div class="image-wrapper">

@@ -10,7 +10,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 50px;
   align-items: center;
   margin-bottom: 50px;
 }
@@ -19,7 +19,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 50px;
   align-items: center; /* Changed from center to flex-start */
   margin-bottom: 50px;
 }
@@ -49,6 +49,7 @@
   max-width: 50%;
   text-align: justify;
   color: rgb(0, 0, 0);
+  line-height: 2rem;
 }
 
 .btn {
