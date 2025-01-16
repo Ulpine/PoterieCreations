@@ -32,19 +32,19 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 50px;
+  width: 100px; /* Even wider for extra smoothness */
   z-index: 1;
   pointer-events: none;
 }
 
 .carousel::before {
   left: 0;
-  background: linear-gradient(to right, white, transparent);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
 }
 
 .carousel::after {
   right: 0;
-  background: linear-gradient(to left, white, transparent);
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
 }
 
 /* Responsive breakpoints */

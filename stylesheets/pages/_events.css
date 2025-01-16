@@ -22,7 +22,7 @@ h1:after {
 /* Main h3 (the one under h1) */
 h4 {
   font-size: 1.2rem;
-  color: #666; /* Matches your existing text colors */
+  color: #666;
   text-align: center;
   margin: 1rem 0 2.5rem;
   font-weight: 500;
@@ -31,7 +31,7 @@ h4 {
 .event-content h3 {
   font-size: 1.25rem;
   text-align: center;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 1rem 0;
   color: #333;
   font-weight: 600;
 }
@@ -58,8 +58,8 @@ h4 {
   align-items: center;
   justify-content: center;
   min-width: 100px;
-  width: 110px;
-  height: 110px;
+  width: 130px;
+  height: 100%;
   padding: 0.5rem;
   background: #f8f6ff;
   border-radius: 6px;
@@ -103,7 +103,7 @@ h4 {
 }
 
 .event-description {
-  margin: 0.5rem 0;
+  margin: 1rem 1rem;
   color: #666;
 }
 
@@ -115,8 +115,6 @@ h4 {
   font-size: 0.9rem;
   justify-content: space-around;
 }
-
-/* Your existing CSS remains the same until the media queries */
 
 /* Media query for tablets */
 @media (max-width: 768px) {
