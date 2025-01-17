@@ -1,0 +1,99 @@
+.article {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Stylish intro header */
+.article h4 {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: #666;
+  font-weight: 500;
+  padding: 2rem;
+  background: #f8f6ff;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border-left: 4px solid #1D499B;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Section headers */
+.article h2 {
+  color: #1D499B;
+  font-size: 1.8rem;
+  margin: 2.5rem 0 1.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Decorative line under section headers */
+.article h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #1D499B, transparent);
+}
+
+/* Paragraphs */
+.article p {
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.2s;
+  text-align: justify;
+  line-height: 2rem;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .article {
+      padding: 0 1rem;
+  }
+
+  .article h4 {
+      padding: 1.5rem;
+      font-size: 1.1rem;
+  }
+
+  .article h2 {
+      font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .article h4 {
+      padding: 1rem;
+      font-size: 1rem;
+  }
+
+  .article h2 {
+      font-size: 1.3rem;
+  }
+}
+
+/* Add some interactivity with hover effects */
+.article h2:hover::after {
+  width: 100px;
+  transition: width 0.3s ease;
+}

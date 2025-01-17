@@ -1,99 +1,120 @@
-.article-raku {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 0 1.5rem;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
+h1{
+  text-align: center;
 }
 
-/* Stylish intro header */
-.article-raku h4 {
+/* General styles */
+.articles {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.articles > div {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.articles > div:hover {
+  transform: translateY(-5px);
+}
+
+/* Image styles */
+.articles img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* Text content styles */
+.articles h2 {
+  padding: 15px;
+  margin: 0;
   font-size: 1.2rem;
-  line-height: 2rem;
+  color: #333;
+  min-height: 80px;
+}
+
+.articles a {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 0 15px 15px;
+  text-decoration: none;
   color: #666;
   font-weight: 500;
-  padding: 2rem;
-  background: #f8f6ff;
-  border-radius: 8px;
-  margin: 2rem 0;
-  border-left: 4px solid #1D499B;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease-out forwards;
-  opacity: 0;
+  transition: color 0.3s ease;
 }
 
-/* Section headers */
-.article-raku h2 {
-  color: #1D499B;
-  font-size: 1.8rem;
-  margin: 2.5rem 0 1.5rem;
-  padding-bottom: 0.5rem;
+.articles a:hover {
+  color: #000;
+}
+
+/* Animation classes */
+.article-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.article-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover animations */
+.article-hover {
+  transition: all 0.3s ease;
+}
+
+.article-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Image zoom effect */
+.articles img {
+  transition: transform 0.5s ease;
+}
+
+.articles > div:hover img {
+  transform: scale(1.05);
+}
+
+/* Link animation */
+.articles a {
   position: relative;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease-out forwards;
+  overflow: hidden;
 }
 
-/* Decorative line under section headers */
-.article-raku h2::after {
+.articles a::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(to right, #1D499B, transparent);
-}
-
-/* Paragraphs */
-.article-raku p {
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease-out forwards;
-  animation-delay: 0.2s;
-  text-align: justify;
-  line-height: 2rem;
-}
-
-/* Animation keyframes */
-@keyframes fadeInUp {
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .article-raku {
-      padding: 0 1rem;
-  }
-
-  .article-raku h4 {
-      padding: 1.5rem;
-      font-size: 1.1rem;
-  }
-
-  .article-raku h2 {
-      font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .article-raku h4 {
-      padding: 1rem;
-      font-size: 1rem;
-  }
-
-  .article-raku h2 {
-      font-size: 1.3rem;
-  }
-}
-
-/* Add some interactivity with hover effects */
-.article-raku h2:hover::after {
-  width: 100px;
+  width: 0;
+  height: 2px;
+  background-color: #0066cc;
   transition: width 0.3s ease;
+}
+
+.articles a:hover::after {
+  width: 100%;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+  .articles {
+      grid-template-columns: 1fr;
+      padding: 15px;
+  }
+
+  .articles h2 {
+      font-size: 1.1rem;
+      min-height: auto;
+  }
 }

@@ -1,33 +1,58 @@
-// Wait for the DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // Function to check if element is in viewport
-  function isInViewport(element) {
-      const rect = element.getBoundingClientRect();
-      return (
-          rect.top >= 0 &&
-          rect.top <= (window.innerHeight || document.documentElement.clientHeight)
-      );
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  // Get all article cards
+  const articles = document.querySelectorAll('.articles > div');
 
-  // Get all sections (h2s and paragraphs)
-  const sections = document.querySelectorAll('.article-raku h2, .article-raku p');
+  // Add initial classes for animations
+  articles.forEach((article, index) => {
+      article.classList.add('article-fade-up');
+      article.classList.add('article-hover');
 
-  // Function to handle scroll animation
-  function handleScroll() {
-      sections.forEach(section => {
-          if (isInViewport(section) && !section.style.animationName) {
-              section.style.animationName = 'fadeInUp';
-              // Add slight delay for paragraphs
-              if (section.tagName === 'P') {
-                  section.style.animationDelay = '0.2s';
-              }
+      // Make the entire card clickable
+      article.style.cursor = 'pointer';
+
+      // Get the link URL from the card's anchor tag
+      const link = article.querySelector('a');
+      const url = link.href;
+
+      // Add click event to the entire card
+      article.addEventListener('click', (e) => {
+          // Prevent default action if clicking on the anchor tag
+          if (e.target.tagName === 'A') {
+              e.preventDefault();
+          }
+
+          // Add click animation
+          article.style.transform = 'scale(0.98)';
+
+          // Redirect after a brief delay for animation
+          setTimeout(() => {
+              window.location.href = url;
+          }, 150);
+      });
+
+      // Delay each card's appearance
+      setTimeout(() => {
+          article.classList.add('article-visible');
+      }, 200 * index);
+  });
+
+  // Optional: Animate cards when they come into view
+  const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '50px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('article-visible');
+              observer.unobserve(entry.target);
           }
       });
-  }
+  }, observerOptions);
 
-  // Initial check
-  handleScroll();
-
-  // Add scroll event listener
-  window.addEventListener('scroll', handleScroll);
+  // Observe each article
+  articles.forEach(article => {
+      observer.observe(article);
+  });
 });
