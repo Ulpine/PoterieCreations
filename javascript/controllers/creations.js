@@ -94,14 +94,3 @@ document.addEventListener("keydown", function(e) {
         }
     }
 });
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Vérifie si l'URL contient .html
-  const currentPath = window.location.pathname;
-  if (currentPath.endsWith(".html")) {
-      // Crée une redirection sans .html
-      const newPath = currentPath.slice(0, -5);
-      window.location.replace(newPath);  // Redirection vers la page sans .html
-  }
-});
