@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: sans-serif;
   line-height: 1.6;
   max-width: 800px;
@@ -15,4 +15,19 @@ h1 {
 h2 {
   margin-top: 2em;
   color: #c17c50;
+} */
+
+/* Responsive spacing */
+@media (max-width: 576px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
 }
