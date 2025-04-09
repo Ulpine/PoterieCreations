@@ -40,6 +40,23 @@
   object-fit: cover;
 }
 
+/* Ajoute cette classe pour les effets de transition */
+.pottery-image.loaded {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+/* Ajoute ceci à ton CSS */
+.is-scrolling .pottery-image {
+  transition: none !important;
+}
+
+/* Utilise will-change pour les éléments qui changent pendant le défilement */
+.pottery-card {
+  will-change: transform;
+  transform: translateZ(0); /* Force l'accélération matérielle */
+}
+
 .image-offset {
   object-position: center center;
 }
