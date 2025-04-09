@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   // Configuration
-  const ITEMS_PER_PAGE = 24;
+  const ITEMS_PER_PAGE = 16;
 
   // Sélectionner tous les éléments
   const allCards = Array.from(document.querySelectorAll('.pottery-card'));
