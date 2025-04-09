@@ -13,6 +13,12 @@
     <link rel="icon" type="image/png" href="/images/favicon.png" alt="Favicon de Poterie Créations">
     <script src="./javascript/controllers/carrousel.js" defer></script>
     <script src="./javascript/controllers/burger.js" defer></script>
+    <!-- JS de GLightbox -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="./javascript/controllers/glightbox-init.js" defer></script>
+    <!-- CSS de GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
   </head>
 <body>
   <nav class="navbar navbar-expand-lg">
@@ -39,6 +45,31 @@
 
 <h1 class="text-center">Les dates à ne pas rater</h1>
 <h4>Tous nos stages ont lieu pendant les périodes scolaires, les dates apparaitront prochainement, soyez patients...</h4>
+
+
+<div class="events-feed">
+  <a href="./images/actualites/Stage enfants avril.jpg" class="event-card event-gallery" data-gallery="stage-avril">
+    <div class="event-image">
+      <img src="./images/actualites/Stage enfants avril.jpg" alt="Image donnant les dates du stage pour enfants du mois d'avril">
+    </div>
+    <div class="event-content">
+        <h2>Stages enfants du mois d'avril</h2>
+        <div class="event-details">
+            <span class="location">📍 10 Av. du Général de Gaulle 35170 Bruz</span>
+        </div>
+    </div>
+  </a>
+
+  <!-- Les autres images de la galerie -->
+  <a href="./images/actualites/Stage enfant avril/Conseils de chef.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
+  <a href="./images/actualites/Stage enfant avril/Créations des enfants.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
+  <a href="./images/actualites/Stage enfant avril/Deux enfants découvrent le modelage.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
+  <a href="./images/actualites/Stage enfant avril/Deux jeunes à la poterie.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
+  <a href="./images/actualites/Stage enfant avril/Stage découverte.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
+  <a href="./images/actualites/Stage enfant avril/un poisson peut etre.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
+  <a href="./images/actualites/Stage enfant avril/Céations2.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
+</div>
+
 
 <div class="events-feed">
   <div class="event-card">
@@ -74,24 +105,6 @@
             </div>
         </div>
     </div>
-</div>
-
-<div class="events-feed">
-  <div class="event-card">
-      <div class="event-date">
-          <span class="date">8 au 24</span>
-          <span class="month">Février</span>
-          <span class="year">2025</span>
-          <span class="event-time">14:00 - 16:00</span>
-      </div>
-      <div class="event-content">
-          <h3>Atelier Poterie pour Enfants</h3>
-            <p class="event-description">Initiation à la poterie pour les enfants de 7 à 12 ans. Création de petits objets décoratifs.</p>
-            <div class="event-details">
-              <span class="location">📍 10 Av. du Général de Gaulle 35170 Bruz</span>
-          </div>
-      </div>
-  </div>
 </div>
 
 <div class="footer">
