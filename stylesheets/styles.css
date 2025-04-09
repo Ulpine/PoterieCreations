@@ -11,6 +11,7 @@
 @import "pages/index.css";
 @import "pages/_events.css";
 @import "pages/_creations.css";
+@import "pages/_creations_pagination.css";
 @import "pages/_a_propos.css";
 @import "pages/_article.css";
 @import "pages/_blog.css";
