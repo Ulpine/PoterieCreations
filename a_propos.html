@@ -117,31 +117,31 @@
     </div>
   </section>
 
-  <div class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="row text-center text-md-start align-items-center">
 
-        <!-- Adresse -->
-        <div class="col-12 col-md-4 mb-3 mb-md-0">
-          <p class="mb-0">
-            Poterie Créations<br>
-            10 Av. du Général de Gaulle<br>
-            35170 Bruz
-          </p>
+        <!-- Adresse avec microdata -->
+        <div class="col-12 col-md-4 mb-3 mb-md-0" itemscope itemtype="http://schema.org/LocalBusiness">
+          <span itemprop="name">Poterie Créations</span><br>
+          <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="streetAddress">10 Av. du Général de Gaulle</span><br>
+            <span itemprop="postalCode">35170</span> <span itemprop="addressLocality">Bruz</span>
+          </div>
         </div>
 
         <!-- Réseaux sociaux -->
         <div class="col-12 col-md-4 mb-3 mb-md-0 d-flex justify-content-center">
           <div class="footer-links-reseaux">
-            <a href="https://www.instagram.com/poterie_creationsbruz?igsh=cHl2M2JpemRoaDI3" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-            <a href="https://www.facebook.com/share/18Yw6rktqJ/?mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://www.instagram.com/poterie_creationsbruz?igsh=cHl2M2JpemRoaDI3" target="_blank" rel="noopener" title="Suivez-nous sur Instagram"><i class="fab fa-instagram fa-2x"></i><span class="visually-hidden">Instagram</span></a>
+            <a href="https://www.facebook.com/share/18Yw6rktqJ/?mibextid=LQQJ4d" target="_blank" rel="noopener" title="Suivez-nous sur Facebook"><i class="fab fa-facebook fa-2x"></i><span class="visually-hidden">Facebook</span></a>
           </div>
         </div>
 
         <!-- Contact -->
         <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
           <div class="footer-links-contact">
-            <a href="mailto:poteriecreationsbruz@gmail.com"><i class="fa-regular fa-envelope fa-2x"></i></a>
+            <a href="mailto:poteriecreationsbruz@gmail.com" title="Contactez-nous par email"><i class="fa-regular fa-envelope fa-2x"></i><span class="visually-hidden">Email</span></a>
           </div>
         </div>
 
@@ -149,10 +149,11 @@
 
       <!-- Mentions légales -->
       <div class="mentions text-center mt-3">
-        <a href="./mentions_legales.html" class="text-decoration-none text-muted">Mentions légales</a>
+        <a href="./mentions_legales" class="text-decoration-none text-muted" title="Mentions légales">Mentions légales</a> |
+        <a href="./plan-du-site" class="text-decoration-none text-muted" title="Plan du site">Plan du site</a>
       </div>
     </div>
-  </div>
+  </footer>
 
 </body>
 </html>

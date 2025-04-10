@@ -48,15 +48,16 @@
 
 
 <div class="events-feed">
-  <a href="./images/actualites/Stage enfants avril.jpg" class="event-card event-gallery" data-gallery="stage-avril">
+  <a href="./images/actualites/Stage enfant avril/L'atelier.jpg" class="event-card event-gallery" data-gallery="stage-avril">
     <div class="event-image">
       <img src="./images/actualites/Stage enfants avril.jpg" alt="Image donnant les dates du stage pour enfants du mois d'avril">
     </div>
     <div class="event-content">
         <h2>Stages enfants du mois d'avril</h2>
         <div class="event-details">
-            <span class="location">📍 10 Av. du Général de Gaulle 35170 Bruz</span>
-        </div>
+            <span class="location text-center">📍 10 Av. du Général de Gaulle 35170 Bruz</span>
+            <span class="text-center">Vous pouvez cliquer pour voir les photos</span>
+          </div>
     </div>
   </a>
 
@@ -68,6 +69,7 @@
   <a href="./images/actualites/Stage enfant avril/Stage découverte.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
   <a href="./images/actualites/Stage enfant avril/un poisson peut etre.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
   <a href="./images/actualites/Stage enfant avril/Céations2.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
+  <a href="./images/actualites/Stage enfants avril.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
 </div>
 
 
@@ -89,49 +91,31 @@
   </div>
 </div>
 
-  <div class="events-feed">
-    <div class="event-card">
-        <div class="event-date">
-            <span class="date">10-14</span>
-            <span class="month">Février</span>
-            <span class="year">2025</span>
-            <span class="event-time">10:00 - 16:00</span>
-        </div>
-        <div class="event-content">
-            <h3>Atelier Poterie pour Enfants</h3>
-            <p class="event-description">Initiation à la poterie pour les enfants de 7 à 12 ans. Création de petits objets décoratifs.</p>
-            <div class="event-details">
-                <span class="location">📍 10 Av. du Général de Gaulle 35170 Bruz</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="footer">
+<footer class="footer">
   <div class="container">
     <div class="row text-center text-md-start align-items-center">
 
-      <!-- Adresse -->
-      <div class="col-12 col-md-4 mb-3 mb-md-0">
-        <p class="mb-0">
-          Poterie Créations<br>
-          10 Av. du Général de Gaulle<br>
-          35170 Bruz
-        </p>
+      <!-- Adresse avec microdata -->
+      <div class="col-12 col-md-4 mb-3 mb-md-0" itemscope itemtype="http://schema.org/LocalBusiness">
+        <span itemprop="name">Poterie Créations</span><br>
+        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">10 Av. du Général de Gaulle</span><br>
+          <span itemprop="postalCode">35170</span> <span itemprop="addressLocality">Bruz</span>
+        </div>
       </div>
 
       <!-- Réseaux sociaux -->
       <div class="col-12 col-md-4 mb-3 mb-md-0 d-flex justify-content-center">
         <div class="footer-links-reseaux">
-          <a href="https://www.instagram.com/poterie_creationsbruz?igsh=cHl2M2JpemRoaDI3" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-          <a href="https://www.facebook.com/share/18Yw6rktqJ/?mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+          <a href="https://www.instagram.com/poterie_creationsbruz?igsh=cHl2M2JpemRoaDI3" target="_blank" rel="noopener" title="Suivez-nous sur Instagram"><i class="fab fa-instagram fa-2x"></i><span class="visually-hidden">Instagram</span></a>
+          <a href="https://www.facebook.com/share/18Yw6rktqJ/?mibextid=LQQJ4d" target="_blank" rel="noopener" title="Suivez-nous sur Facebook"><i class="fab fa-facebook fa-2x"></i><span class="visually-hidden">Facebook</span></a>
         </div>
       </div>
 
       <!-- Contact -->
       <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
         <div class="footer-links-contact">
-          <a href="mailto:poteriecreationsbruz@gmail.com"><i class="fa-regular fa-envelope fa-2x"></i></a>
+          <a href="mailto:poteriecreationsbruz@gmail.com" title="Contactez-nous par email"><i class="fa-regular fa-envelope fa-2x"></i><span class="visually-hidden">Email</span></a>
         </div>
       </div>
 
@@ -139,10 +123,11 @@
 
     <!-- Mentions légales -->
     <div class="mentions text-center mt-3">
-      <a href="./mentions_legales.html" class="text-decoration-none text-muted">Mentions légales</a>
+      <a href="./mentions_legales" class="text-decoration-none text-muted" title="Mentions légales">Mentions légales</a> |
+      <a href="./plan-du-site" class="text-decoration-none text-muted" title="Plan du site">Plan du site</a>
     </div>
   </div>
-</div>
+</footer>
 
 </body>
 </html>

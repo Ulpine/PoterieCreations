@@ -92,55 +92,8 @@ h4 {
   }
 }
 
-
-.event-date {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 100px;
-  width: 130px;
-  height: 100%;
-  padding: 0.5rem;
-  background: #f8f6ff;
-  border-radius: 6px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(74, 119, 229, 0.1);
-}
-
-.date {
-  font-size: 1.5rem; /* Reduced from 1.8rem */
-  font-weight: bold;
-  line-height: 1.2;
-  margin-bottom: 0.25rem;
-  text-align: center;
-  width: 100%;
-  color: #1D499B;
-}
-
-.month {
-  font-size: 0.9rem;
-  color: #666;
-  margin: 0.1rem 0;
-  text-align: center;
-}
-
-
-.year {
-  font-size: 0.8rem;
-  color: #666;
-  text-align: center;
-}
-
 .event-content {
   flex: 1;
-}
-
-.event-time {
-  color: #1D499B;
-  font-weight: 500;
-  margin: 0.5rem 0;
-  text-align: center;
 }
 
 .event-description {
@@ -151,10 +104,12 @@ h4 {
 .event-details {
   display: flex;
   gap: 1.5rem;
-  margin-top: 1rem;
+  margin: 1rem;
+  padding-top: 1rem;
   color: #666;
   font-size: 0.9rem;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content:center;
 }
 
 /* Media query for tablets */
