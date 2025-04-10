@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-        <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WGV2RVXEQQ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -12,7 +12,18 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Poterie Créations</title>
+    <!-- Ajout meta description -->
+    <meta name="description" content="Découvrez le blog de Poterie Créations à Bruz avec des articles sur les techniques de poterie : Raku, Porcelaine, Émaillage et Grès. Association de poterie depuis 1998.">
+    <!-- Ajout meta keywords -->
+    <meta name="keywords" content="blog poterie, raku, porcelaine, émaillage, grès, techniques poterie, atelier poterie Bruz, céramique, association poterie, cours poterie">
+    <!-- Titre optimisé -->
+    <title>Blog Poterie Créations | Articles sur les techniques de poterie à Bruz</title>
+    <!-- Ajout balises Open Graph -->
+    <meta property="og:title" content="Blog Poterie Créations | Techniques de poterie et céramique">
+    <meta property="og:description" content="Découvrez nos articles sur les techniques de poterie : Raku, Porcelaine, Émaillage et Grès. Association Poterie Créations à Bruz depuis 1998.">
+    <meta property="og:image" content="https://poterie-creations.fr/images/logo%20poterie.jpg">
+    <meta property="og:url" content="https://poterie-creations.fr/blog">
+    <meta property="og:type" content="website">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./stylesheets/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
@@ -23,91 +34,140 @@
     <script src="./javascript/controllers/carrousel.js" defer></script>
     <script src="./javascript/controllers/burger.js" defer></script>
     <script src="./javascript/controllers/blog.js" defer></script>
+    <!-- Ajout données structurées JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Blog Poterie Créations",
+        "url": "https://poterie-creations.fr/blog",
+        "image": "https://poterie-creations.fr/images/logo%20poterie.jpg",
+        "description": "Blog de l'association Poterie Créations sur les techniques de poterie et céramique : Raku, Porcelaine, Émaillage et Grès.",
+        "publisher": {
+          "@type": "NGO",
+          "name": "Association Poterie Créations",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://poterie-creations.fr/images/logo%20poterie.jpg"
+          }
+        },
+        "blogPost": [
+          {
+            "@type": "BlogPosting",
+            "headline": "La technique du Raku",
+            "image": "https://poterie-creations.fr/images/Blog/Raku2.jpg",
+            "url": "https://poterie-creations.fr/raku.html",
+            "datePublished": "2024-04-01"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "La Porcelaine",
+            "image": "https://poterie-creations.fr/images/Blog/Porcelaine.jpeg",
+            "url": "https://poterie-creations.fr/porcelaine.html",
+            "datePublished": "2024-03-15"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Émaillage et sa technique",
+            "image": "https://poterie-creations.fr/images/Blog/Emaillage2.jpeg",
+            "url": "https://poterie-creations.fr/emaillage.html",
+            "datePublished": "2024-02-20"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Qu'est-ce que le grès ?",
+            "image": "https://poterie-creations.fr/images/Blog/Grès2.jpeg",
+            "url": "https://poterie-creations.fr/gres.html",
+            "datePublished": "2024-01-25"
+          }
+        ]
+      }
+    </script>
   </head>
-<body>
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <div class="navbar-brand">
-      <a href="./">
-        <img src="images/logo poterie.jpg" style="height: 100px; width: 200px;" class="logo" alt="logo Poterie Créations" class="rounded-3 shadow">
-      </a>
-    </div>
-    <div class="burger-menu">
-      <div class="burger-bar"></div>
-      <div class="burger-bar"></div>
-      <div class="burger-bar"></div>
-    </div>
-    <div class="navbar-menu">
-      <a href="./" class="nav-link">Accueil</a>
-      <a href="./actualites" class="nav-link">Actualités</a>
-      <a href="./creations" class="nav-link">Créations</a>
-      <a href="./blog" class="nav-link">Blog</a>
-      <a href="./a_propos" class="nav-link">A propos</a>
-    </div>
-  </div>
-</nav>
-
-<h1>Les articles du moment</h1>
-<div class="articles">
-    <div class="raku">
-      <img src="./images/Blog/Raku2.jpg" alt="">
-      <h2>Si vous souhaitez en savoir plus sur la technique du Raku...</h2>
-        <a href="./raku">Lire l'article >></a>
-    </div>
-    <div class="porceleine">
-      <img src="./images/Blog/Porcelaine.jpeg" alt="">
-      <h2>Vous pouvez retrouver ici des informations concernant la Porcelaine</h2>
-        <a href="./porcelaine">Lire l'article >></a>
-    </div>
-    <div class="emaillage">
-      <img src="./images/Blog/Emaillage2.jpeg" alt="">
-      <h2>Émaillage et sa technique</h2>
-        <a href="./emaillage">Lire l'article >></a>
-    </div>
-    <div class="gres">
-      <img src="./images/Blog/Grès2.jpeg" alt="">
-      <h2>Qu'est-ce que le grès ?</h2>
-        <a href="./gres">Lire l'article >></a>
-    </div>
-</div>
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="row text-center text-md-start align-items-center">
-
-      <!-- Adresse avec microdata -->
-      <div class="col-12 col-md-4 mb-3 mb-md-0" itemscope itemtype="http://schema.org/NonprofitOrganization">
-        <span itemprop="name">Association Poterie Créations</span><br>
-        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-          <span itemprop="streetAddress">10 Av. du Général de Gaulle</span><br>
-          <span itemprop="postalCode">35170</span> <span itemprop="addressLocality">Bruz</span>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <div class="navbar-brand">
+          <a href="./">
+            <img src="images/logo poterie.jpg" style="height: 100px; width: 200px;" class="logo" alt="logo Poterie Créations" class="rounded-3 shadow">
+          </a>
+        </div>
+        <div class="burger-menu">
+          <div class="burger-bar"></div>
+          <div class="burger-bar"></div>
+          <div class="burger-bar"></div>
+        </div>
+        <div class="navbar-menu">
+          <a href="./" class="nav-link">Accueil</a>
+          <a href="./actualites" class="nav-link">Actualités</a>
+          <a href="./creations" class="nav-link">Créations</a>
+          <a href="./blog" class="nav-link">Blog</a>
+          <a href="./a_propos" class="nav-link">A propos</a>
         </div>
       </div>
+    </nav>
 
-      <!-- Réseaux sociaux -->
-      <div class="col-12 col-md-4 mb-3 mb-md-0 d-flex justify-content-center">
-        <div class="footer-links-reseaux">
-          <a href="https://www.instagram.com/poterie_creationsbruz?igsh=cHl2M2JpemRoaDI3" target="_blank" rel="noopener" title="Suivez-nous sur Instagram"><i class="fab fa-instagram fa-2x"></i><span class="visually-hidden">Instagram</span></a>
-          <a href="https://www.facebook.com/share/18Yw6rktqJ/?mibextid=LQQJ4d" target="_blank" rel="noopener" title="Suivez-nous sur Facebook"><i class="fab fa-facebook fa-2x"></i><span class="visually-hidden">Facebook</span></a>
+    <h1>Les articles du moment</h1>
+    <div class="articles">
+        <div class="raku">
+          <img src="./images/Blog/Raku2.jpg" alt="">
+          <h2>Si vous souhaitez en savoir plus sur la technique du Raku...</h2>
+            <a href="./raku">Lire l'article >></a>
         </div>
-      </div>
-
-      <!-- Contact -->
-      <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
-        <div class="footer-links-contact">
-          <a href="mailto:poteriecreationsbruz@gmail.com" title="Contactez-nous par email"><i class="fa-regular fa-envelope fa-2x"></i><span class="visually-hidden">Email</span></a>
+        <div class="porceleine">
+          <img src="./images/Blog/Porcelaine.jpeg" alt="">
+          <h2>Vous pouvez retrouver ici des informations concernant la Porcelaine</h2>
+            <a href="./porcelaine">Lire l'article >></a>
         </div>
-      </div>
-
+        <div class="emaillage">
+          <img src="./images/Blog/Emaillage2.jpeg" alt="">
+          <h2>Émaillage et sa technique</h2>
+            <a href="./emaillage">Lire l'article >></a>
+        </div>
+        <div class="gres">
+          <img src="./images/Blog/Grès2.jpeg" alt="">
+          <h2>Qu'est-ce que le grès ?</h2>
+            <a href="./gres">Lire l'article >></a>
+        </div>
     </div>
 
-    <!-- Mentions légales -->
-    <div class="mentions text-center mt-3">
-      <a href="./mentions_legales" class="text-decoration-none text-muted" title="Mentions légales">Mentions légales</a> |
-      <a href="./plan-du-site" class="text-decoration-none text-muted" title="Plan du site">Plan du site</a>
-    </div>
-  </div>
-</footer>
-</body>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row text-center text-md-start align-items-center">
+
+          <!-- Adresse avec microdata -->
+          <div class="col-12 col-md-4 mb-3 mb-md-0" itemscope itemtype="http://schema.org/NonprofitOrganization">
+            <span itemprop="name">Association Poterie Créations</span><br>
+            <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+              <span itemprop="streetAddress">10 Av. du Général de Gaulle</span><br>
+              <span itemprop="postalCode">35170</span> <span itemprop="addressLocality">Bruz</span>
+            </div>
+          </div>
+
+          <!-- Réseaux sociaux -->
+          <div class="col-12 col-md-4 mb-3 mb-md-0 d-flex justify-content-center">
+            <div class="footer-links-reseaux">
+              <a href="https://www.instagram.com/poterie_creationsbruz?igsh=cHl2M2JpemRoaDI3" target="_blank" rel="noopener" title="Suivez-nous sur Instagram"><i class="fab fa-instagram fa-2x"></i><span class="visually-hidden">Instagram</span></a>
+              <a href="https://www.facebook.com/share/18Yw6rktqJ/?mibextid=LQQJ4d" target="_blank" rel="noopener" title="Suivez-nous sur Facebook"><i class="fab fa-facebook fa-2x"></i><span class="visually-hidden">Facebook</span></a>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
+            <div class="footer-links-contact">
+              <a href="mailto:poteriecreationsbruz@gmail.com" title="Contactez-nous par email"><i class="fa-regular fa-envelope fa-2x"></i><span class="visually-hidden">Email</span></a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mentions légales -->
+        <div class="mentions text-center mt-3">
+          <a href="./mentions_legales" class="text-decoration-none text-muted" title="Mentions légales">Mentions légales</a> |
+          <a href="./plan-du-site" class="text-decoration-none text-muted" title="Plan du site">Plan du site</a>
+        </div>
+      </div>
+    </footer>
+    </body>
 </html>
