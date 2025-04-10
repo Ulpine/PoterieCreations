@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-        <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WGV2RVXEQQ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -12,13 +12,17 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Découvrez l’histoire de l’association Poterie Créations à Bruz, son engagement dans la poterie, la sculpture et la céramique depuis 1998. Ateliers, stages et expositions.">
-    <meta name="keywords" content="association poterie, poterie Bruz, histoire association, céramique, sculpture, atelier libre, stages poterie, exposition Gauguin Bruz">
-    <title>À propos de Poterie Créations | Atelier de poterie à Bruz</title>
-    <meta property="og:title" content="À propos de Poterie Créations | Association de poterie à Bruz depuis 1998">
-    <meta property="og:description" content="Découvrez l'histoire de l'association Poterie Créations à Bruz, son engagement dans la poterie, la sculpture et la céramique depuis 1998. Ateliers, stages et expositions.">
+    <!-- Ajout meta description -->
+    <meta name="description" content="Découvrez le blog de Poterie Créations à Bruz avec des articles sur les techniques de poterie : Raku, Porcelaine, Émaillage et Grès. Association de poterie depuis 1998.">
+    <!-- Ajout meta keywords -->
+    <meta name="keywords" content="blog poterie, raku, porcelaine, émaillage, grès, techniques poterie, atelier poterie Bruz, céramique, association poterie, cours poterie">
+    <!-- Titre optimisé -->
+    <title>Blog Poterie Créations | Articles sur les techniques de poterie à Bruz</title>
+    <!-- Ajout balises Open Graph -->
+    <meta property="og:title" content="Blog Poterie Créations | Techniques de poterie et céramique">
+    <meta property="og:description" content="Découvrez nos articles sur les techniques de poterie : Raku, Porcelaine, Émaillage et Grès. Association Poterie Créations à Bruz depuis 1998.">
     <meta property="og:image" content="https://poterie-creations.fr/images/logo%20poterie.jpg">
-    <meta property="og:url" content="https://poterie-creations.fr/a_propos">
+    <meta property="og:url" content="https://poterie-creations.fr/blog">
     <meta property="og:type" content="website">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./stylesheets/styles.css">
@@ -29,172 +33,151 @@
     <link rel="icon" type="image/png" href="/images/favicon.png" alt="Favicon de Poterie Créations">
     <script src="./javascript/controllers/carrousel.js" defer></script>
     <script src="./javascript/controllers/burger.js" defer></script>
+    <script src="./javascript/controllers/blog.js" defer></script>
+    <!-- Ajout données structurées JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "NGO",
-        "name": "Association Poterie Créations",
-        "url": "https://poterie-creations.fr/a_propos",
-        "logo": "https://poterie-creations.fr/images/logo%20poterie.jpg",
-        "description": "Association de poterie à but non lucratif créée à Bruz en 1998, dédiée à la pratique de la poterie, de la sculpture et de la céramique pour tous les niveaux.",
-        "sameAs": [
-          "https://www.instagram.com/poterie_creationsbruz",
-          "https://www.facebook.com/share/18Yw6rktqJ"
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "10 Av. du Général de Gaulle",
-          "addressLocality": "Bruz",
-          "postalCode": "35170",
-          "addressCountry": "FR"
+        "@type": "Blog",
+        "name": "Blog Poterie Créations",
+        "url": "https://poterie-creations.fr/blog",
+        "image": "https://poterie-creations.fr/images/logo%20poterie.jpg",
+        "description": "Blog de l'association Poterie Créations sur les techniques de poterie et céramique : Raku, Porcelaine, Émaillage et Grès.",
+        "publisher": {
+          "@type": "NGO",
+          "name": "Association Poterie Créations",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://poterie-creations.fr/images/logo%20poterie.jpg"
+          }
         },
-        "email": "poteriecreationsbruz@gmail.com",
-        "nonprofitStatus": "NonProfit",
-        "foundingDate": "1998-07-29",
-        "numberOfEmployees": "40",
-        "keywords": ["association poterie", "histoire poterie Bruz", "atelier céramique", "poterie association 1998", "ateliers artistiques Bruz"]
+        "blogPost": [
+          {
+            "@type": "BlogPosting",
+            "headline": "La technique du Raku",
+            "image": "https://poterie-creations.fr/images/Blog/Raku2.jpg",
+            "url": "https://poterie-creations.fr/raku.html",
+            "datePublished": "2024-04-01"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "La Porcelaine",
+            "image": "https://poterie-creations.fr/images/Blog/Porcelaine.jpeg",
+            "url": "https://poterie-creations.fr/porcelaine.html",
+            "datePublished": "2024-03-15"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Émaillage et sa technique",
+            "image": "https://poterie-creations.fr/images/Blog/Emaillage2.jpeg",
+            "url": "https://poterie-creations.fr/emaillage.html",
+            "datePublished": "2024-02-20"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Qu'est-ce que le grès ?",
+            "image": "https://poterie-creations.fr/images/Blog/Grès2.jpeg",
+            "url": "https://poterie-creations.fr/gres.html",
+            "datePublished": "2024-01-25"
+          }
+        ]
       }
-      </script>
+    </script>
   </head>
 <body>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <div class="navbar-brand">
-        <a href="./">
-          <img src="images/logo poterie.jpg" style="height: 100px; width: 200px;" class="logo" alt="Logo de l'association Poterie Créations à Bruz" class="rounded-3 shadow">
-        </a>
-      </div>
-      <div class="burger-menu">
-        <div class="burger-bar"></div>
-        <div class="burger-bar"></div>
-        <div class="burger-bar"></div>
-      </div>
-      <div class="navbar-menu">
-        <a href="./" class="nav-link">Accueil</a>
-        <a href="./actualites" class="nav-link">Actualités</a>
-        <a href="./creations" class="nav-link">Créations</a>
-        <a href="./blog" class="nav-link">Blog</a>
-        <a href="./a_propos" class="nav-link">A propos</a>
-      </div>
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <div class="navbar-brand">
+      <a href="./">
+        <img src="images/logo poterie.jpg" style="height: 100px; width: 200px;" class="logo" alt="Logo de l'association Poterie Créations à Bruz" class="rounded-3 shadow">
+      </a>
     </div>
-  </nav>
-
-  <!-- <div class="about-header">
-    <div class="container">
-      <h1>A propos</h1>
+    <div class="burger-menu">
+      <div class="burger-bar"></div>
+      <div class="burger-bar"></div>
+      <div class="burger-bar"></div>
     </div>
-  </div> -->
-
-  <!-- <div class="container">
-    <section class="history">
-      <h1>L'histoire de l'asso</h1>
-      <p>L’association Poterie Création a été créée à Bruz le 29 juillet 1998. Elle a pour vocation la pratique de la poterie, de la sculpture et de la céramique. Les séances pour débutants sont animées par des bénévoles et l’atelier est libre. Elle compte actuellement une quarantaine d’adhérents et propose régulièrement des stages pour enfants ou adultes débutants. Une exposition des travaux des adhérents est organisée chaque année à l’espace Gauguin de Bruz.</p>
-    </section>
-  </div> -->
-
-  <div class="container my-5">
-    <div class="row align-items-center">
-      <!-- Texte à gauche -->
-      <div class="col-md-6">
-        <section class="history">
-          <h1>L'histoire de l'asso</h1>
-          <p>
-            L’association Poterie Création a été créée à Bruz le 29 juillet 1998. Elle a pour vocation la pratique de la poterie, de la sculpture et de la céramique. Les séances pour débutants sont animées par des bénévoles et l’atelier est libre. Elle compte actuellement une quarantaine d’adhérents et propose régulièrement des stages pour enfants ou adultes débutants. Une exposition des travaux des adhérents est organisée chaque année à l’espace Gauguin de Bruz.
-          </p>
-        </section>
-      </div>
-
-      <!-- Image à droite -->
-      <div class="col-md-6 text-center">
-        <img src="images/a propos/map.PNG" alt="Carte de l'emplacement de l'atelier Poterie Créations à Bruz" class="img-fluid rounded">
-      </div>
+    <div class="navbar-menu">
+      <a href="./" class="nav-link">Accueil</a>
+      <a href="./actualites" class="nav-link">Actualités</a>
+      <a href="./creations" class="nav-link">Créations</a>
+      <a href="./blog" class="nav-link">Blog</a>
+      <a href="./a_propos" class="nav-link">A propos</a>
     </div>
   </div>
+</nav>
 
+<main>
+  <!-- Ajout de la balise <main> et structure sémantique améliorée -->
+  <div class="container my-4">
+    <header>
+      <h1>Les articles du moment</h1>
+    </header>
 
-  <section class="testimonials">
-    <div class="container">
-      <h2>Témoignages</h2>
+    <div class="articles">
+      <article class="raku">
+        <img src="./images/Blog/Raku2.jpg" alt="Poterie avec technique Raku - effet craquelé caractéristique">
+        <h2>Si vous souhaitez en savoir plus sur la technique du Raku...</h2>
+        <a href="./raku.html" aria-label="Lire l'article sur la technique du Raku">Lire l'article &gt;&gt;</a>
+      </article>
 
-      <div class="testimonial reverse">
-        <div class="testimonial-text">
-          <p class="quote">J'aime partager cette passion avec l'homme de ma vie ! J'espère que notre fille préférée nous rejoindra 🤎</p>
-          <p class="author">— Nathalie</p>
-        </div>
-        <div class="testimonial-image">
-          <img src="images/BP/love.jpg" alt="Photo de Nathalie et Blaise, membres de Poterie Créations" style="zoom: 80%;">
-        </div>
-      </div>
+      <article class="porceleine">
+        <img src="./images/Blog/Porcelaine.jpeg" alt="Pièce en porcelaine blanche fine et délicate">
+        <h2>Vous pouvez retrouver ici des informations concernant la Porcelaine</h2>
+        <a href="./porcelaine.html" aria-label="Lire l'article sur la porcelaine">Lire l'article &gt;&gt;</a>
+      </article>
 
-      <div class="testimonial">
-        <div class="testimonial-text">
-          <p class="quote">J'aime beaucoup accompagner les enfants pour leur faire découvrir l'art de la poterie</p>
-          <p class="author">— Fatima</p>
-        </div>
-        <div class="testimonial-image">
-          <img src="images/a propos/Fatima.jpeg" alt="Fatima, bénévole animant des ateliers pour enfants">
-        </div>
-      </div>
+      <article class="emaillage">
+        <img src="./images/Blog/Emaillage2.jpeg" alt="Démonstration d'émaillage sur une pièce en céramique">
+        <h2>Émaillage et sa technique</h2>
+        <a href="./emaillage.html" aria-label="Lire l'article sur l'émaillage">Lire l'article &gt;&gt;</a>
+      </article>
 
-      <div class="testimonial reverse">
-        <div class="testimonial-text">
-          <p class="quote">C'est avec plaisir que j'ai pris la Présidence de l'association, j'aime la voir perdurer</p>
-          <p class="author">— Sylvaine</p>
-        </div>
-        <div class="testimonial-image">
-          <img src="images/a propos/Sylvaine.jpeg" alt="Sylvaine, présidente de l'association Poterie Créations">
-        </div>
-      </div>
-
-      <div class="testimonial">
-        <div class="testimonial-text">
-          <p class="quote">Nous aimons venir en couple partager des moments avec les membres de l'asso, créer, partager et s'engager dans la vie associative</p>
-          <p class="author">— Blaise et Nathalie</p>
-        </div>
-        <div class="testimonial-image">
-          <img src="images/creations/Famille Pingouin.jpeg" alt="Sculpture en poterie de pingouins réalisée à l'atelier de Bruz">
-        </div>
-      </div>
+      <article class="gres">
+        <img src="./images/Blog/Grès2.jpeg" alt="Poteries en grès avec diverses textures et couleurs">
+        <h2>Qu'est-ce que le grès ?</h2>
+        <a href="./gres.html" aria-label="Lire l'article sur le grès">Lire l'article &gt;&gt;</a>
+      </article>
     </div>
-  </section>
+  </div>
+</main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="row text-center text-md-start align-items-center">
+<footer class="footer">
+  <div class="container">
+    <div class="row text-center text-md-start align-items-center">
 
-        <!-- Adresse avec microdata -->
-        <div class="col-12 col-md-4 mb-3 mb-md-0" itemscope itemtype="http://schema.org/NonprofitOrganization">
-          <span itemprop="name">Association Poterie Créations</span><br>
-          <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-            <span itemprop="streetAddress">10 Av. du Général de Gaulle</span><br>
-            <span itemprop="postalCode">35170</span> <span itemprop="addressLocality">Bruz</span>
-          </div>
+      <!-- Adresse avec microdata -->
+      <div class="col-12 col-md-4 mb-3 mb-md-0" itemscope itemtype="http://schema.org/NonprofitOrganization">
+        <span itemprop="name">Association Poterie Créations</span><br>
+        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">10 Av. du Général de Gaulle</span><br>
+          <span itemprop="postalCode">35170</span> <span itemprop="addressLocality">Bruz</span>
         </div>
-
-        <!-- Réseaux sociaux -->
-        <div class="col-12 col-md-4 mb-3 mb-md-0 d-flex justify-content-center">
-          <div class="footer-links-reseaux">
-            <a href="https://www.instagram.com/poterie_creationsbruz?igsh=cHl2M2JpemRoaDI3" target="_blank" rel="noopener" title="Suivez-nous sur Instagram"><i class="fab fa-instagram fa-2x"></i><span class="visually-hidden">Instagram</span></a>
-            <a href="https://www.facebook.com/share/18Yw6rktqJ/?mibextid=LQQJ4d" target="_blank" rel="noopener" title="Suivez-nous sur Facebook"><i class="fab fa-facebook fa-2x"></i><span class="visually-hidden">Facebook</span></a>
-          </div>
-        </div>
-
-        <!-- Contact -->
-        <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
-          <div class="footer-links-contact">
-            <a href="mailto:poteriecreationsbruz@gmail.com" title="Contactez-nous par email"><i class="fa-regular fa-envelope fa-2x"></i><span class="visually-hidden">Email</span></a>
-          </div>
-        </div>
-
       </div>
 
-      <!-- Mentions légales -->
-      <div class="mentions text-center mt-3">
-        <a href="./mentions_legales" class="text-decoration-none text-muted" title="Mentions légales">Mentions légales</a> |
-        <a href="./plan-du-site" class="text-decoration-none text-muted" title="Plan du site">Plan du site</a>
+      <!-- Réseaux sociaux -->
+      <div class="col-12 col-md-4 mb-3 mb-md-0 d-flex justify-content-center">
+        <div class="footer-links-reseaux">
+          <a href="https://www.instagram.com/poterie_creationsbruz?igsh=cHl2M2JpemRoaDI3" target="_blank" rel="noopener" title="Suivez-nous sur Instagram"><i class="fab fa-instagram fa-2x"></i><span class="visually-hidden">Instagram</span></a>
+          <a href="https://www.facebook.com/share/18Yw6rktqJ/?mibextid=LQQJ4d" target="_blank" rel="noopener" title="Suivez-nous sur Facebook"><i class="fab fa-facebook fa-2x"></i><span class="visually-hidden">Facebook</span></a>
+        </div>
       </div>
+
+      <!-- Contact -->
+      <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
+        <div class="footer-links-contact">
+          <a href="mailto:poteriecreationsbruz@gmail.com" title="Contactez-nous par email"><i class="fa-regular fa-envelope fa-2x"></i><span class="visually-hidden">Email</span></a>
+        </div>
+      </div>
+
     </div>
-  </footer>
 
+    <!-- Mentions légales -->
+    <div class="mentions text-center mt-3">
+      <a href="./mentions_legales" class="text-decoration-none text-muted" title="Mentions légales">Mentions légales</a> |
+      <a href="./plan-du-site" class="text-decoration-none text-muted" title="Plan du site">Plan du site</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
