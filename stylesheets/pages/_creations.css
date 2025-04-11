@@ -118,6 +118,8 @@
   color: white;
   padding: 10px 0;
   height: 150px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /* Animation */
@@ -156,14 +158,15 @@
 /* Counter styling */
 #imageCounter {
   position: absolute;
-  bottom: 20px;
-  left: 50%;
+  bottom: 10px;
+  right: 10px;
   transform: translateX(-50%);
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 14px;
+  display: block;
 }
 
 /* Slide animations */

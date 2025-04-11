@@ -41,7 +41,7 @@ function updateModalImage(index, direction = null) {
     currentImageIndex = index;
 
     // Update counter
-    imageCounter.textContent = `Image ${index + 1} of ${potteryCards.length}`;
+    imageCounter.textContent = `Image ${index + 1} sur ${potteryCards.length}`;
 }
 
 // Fonction pour afficher l'indicateur de swipe
@@ -178,49 +178,5 @@ document.addEventListener('DOMContentLoaded', function() {
         // Variables pour le suivi du toucher
         let touchStartX = 0;
         let isSwiping = false;
-
-        // Amélioration de l'indicateur visuel pour le swipe
-        modal.addEventListener('touchstart', function(e) {
-            if (isAnimating) return;
-
-            touchStartX = e.touches[0].clientX;
-            isSwiping = true;
-        }, { passive: true }); // Utiliser passive: true pour de meilleures performances
-
-        modal.addEventListener('touchmove', function(e) {
-            if (!isSwiping || isAnimating) return;
-
-            const touchMoveX = e.touches[0].clientX;
-            const modalContent = document.querySelector('.modal-content');
-
-            if (modalContent) {
-                const offset = touchMoveX - touchStartX;
-
-                // Limiter le déplacement pour un effet de résistance
-                const limitedOffset = Math.min(100, Math.max(-100, offset));
-
-                // Appliquer un léger déplacement visuel pendant le swipe avec transition douce
-                modalContent.style.transition = 'transform 0.1s';
-                modalContent.style.transform = `translateX(${limitedOffset * 0.3}px)`;
-            }
-        }, { passive: true });
-
-        modal.addEventListener('touchend', function() {
-            if (!isSwiping) return;
-
-            isSwiping = false;
-
-            // Réinitialiser la position avec transition pour éviter le saut
-            const modalContent = document.querySelector('.modal-content');
-            if (modalContent) {
-                modalContent.style.transition = 'transform 0.2s';
-                modalContent.style.transform = '';
-
-                // Réinitialiser la transition après le retour
-                setTimeout(() => {
-                    modalContent.style.transition = '';
-                }, 200);
-            }
-        }, { passive: true });
     }
 });
