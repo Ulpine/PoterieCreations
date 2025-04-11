@@ -93,7 +93,6 @@
   max-height: 80vh;
   object-fit: contain;
   background-color: #A7BCB7;
-  animation: none !important;
 }
 
 .close-button {
@@ -208,10 +207,10 @@
   }
 }
 
-@keyframes zoom {
+/* @keyframes zoom {
   from {transform:scale(0)}
   to {transform:scale(1)}
-}
+} */
 
 @media (hover: hover) {
   .pottery-card:hover {
