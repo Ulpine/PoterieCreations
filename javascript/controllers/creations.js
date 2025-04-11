@@ -9,9 +9,13 @@ const nextButton = document.querySelector(".next-button");
 const potteryCards = document.querySelectorAll(".pottery-card");
 
 let currentImageIndex = 0;
+let isAnimating = false;
 
 // Function to update modal content
 function updateModalImage(index, direction = null) {
+    // Ne pas changer d'image si une animation est déjà en cours
+    if (isAnimating) return;
+
     const img = potteryCards[index].querySelector(".pottery-image");
     const caption = potteryCards[index].querySelector("h3").textContent;
 
@@ -23,7 +27,13 @@ function updateModalImage(index, direction = null) {
 
     // Add new animation class based on direction
     if (direction) {
+        isAnimating = true;
         modalImg.classList.add('slide-animation', direction === 'next' ? 'slide-left' : 'slide-right');
+
+        // Réinitialiser le flag d'animation après la fin de l'animation
+        setTimeout(() => {
+            isAnimating = false;
+        }, 300); // Durée de votre animation CSS (ajustez si nécessaire)
     }
 
     modalImg.src = img.src;
@@ -34,18 +44,39 @@ function updateModalImage(index, direction = null) {
     imageCounter.textContent = `Image ${index + 1} of ${potteryCards.length}`;
 }
 
-// Add click event to each pottery card
+// Fonction pour afficher l'indicateur de swipe
+function showSwipeHint() {
+    // Vérifier si l'utilisateur est sur mobile
+    if (window.innerWidth <= 768) {
+        const swipeHint = document.querySelector('.swipe-hint');
+        if (swipeHint) {
+            swipeHint.classList.add('active');
+
+            // Supprimer la classe après l'animation
+            setTimeout(() => {
+                swipeHint.classList.remove('active');
+            }, 2000);
+        }
+    }
+}
+
+// Add click event to each pottery card - UNIQUEMENT UN ÉVÉNEMENT
 potteryCards.forEach((card, index) => {
     card.addEventListener("click", function() {
         modal.style.display = "block";
         updateModalImage(index);
         document.body.style.overflow = "hidden";
+
+        // Ajouter l'animation de l'indicateur de swipe
+        showSwipeHint();
     });
 });
 
 // Previous button click
 prevButton.addEventListener("click", function(e) {
     e.stopPropagation();
+    if (isAnimating) return; // Ne pas traiter si une animation est en cours
+
     let newIndex = currentImageIndex - 1;
     if (newIndex < 0) {
         newIndex = potteryCards.length - 1;
@@ -56,6 +87,8 @@ prevButton.addEventListener("click", function(e) {
 // Next button click
 nextButton.addEventListener("click", function(e) {
     e.stopPropagation();
+    if (isAnimating) return; // Ne pas traiter si une animation est en cours
+
     let newIndex = currentImageIndex + 1;
     if (newIndex >= potteryCards.length) {
         newIndex = 0;
@@ -82,10 +115,10 @@ document.addEventListener("keydown", function(e) {
     if (modal.style.display === "block") {
         switch(e.key) {
             case "ArrowLeft":
-                prevButton.click();
+                if (!isAnimating) prevButton.click();
                 break;
             case "ArrowRight":
-                nextButton.click();
+                if (!isAnimating) nextButton.click();
                 break;
             case "Escape":
                 modal.style.display = "none";
@@ -95,106 +128,99 @@ document.addEventListener("keydown", function(e) {
     }
 });
 
-
-
+// Initialisation de Hammer.js et gestion tactile
 document.addEventListener('DOMContentLoaded', function() {
-  // Référence à l'élément modal
-  const modal = document.getElementById('imageModal');
+    // Référence à l'élément modal
+    const modal = document.getElementById('imageModal');
 
-  // Ne configurer Hammer que si nous sommes sur la page avec le modal
-  if (modal) {
-    // Initialiser Hammer sur l'élément modal
-    const hammer = new Hammer(modal);
+    // Ne configurer Hammer que si nous sommes sur la page avec le modal
+    if (modal) {
+        // Initialiser Hammer sur l'élément modal
+        const hammer = new Hammer(modal);
 
-    // Configuration pour détection horizontale
-    hammer.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+        // Configuration pour détection horizontale
+        hammer.get('swipe').set({
+            direction: Hammer.DIRECTION_HORIZONTAL,
+            threshold: 10,          // Réduire le seuil pour une meilleure sensibilité
+            velocity: 0.3           // Réduire la vélocité requise pour un swipe plus facile
+        });
 
-    // Gestionnaire d'événement pour le swipe
-    hammer.on('swipeleft', function() {
-      // Swipe gauche - image suivante
-      nextImage();
-    });
+        // Gestionnaire d'événement pour le swipe
+        hammer.on('swipeleft', function() {
+            if (!isAnimating) {
+                // Swipe gauche - image suivante
+                nextImage();
+            }
+        });
 
-    hammer.on('swiperight', function() {
-      // Swipe droit - image précédente
-      prevImage();
-    });
+        hammer.on('swiperight', function() {
+            if (!isAnimating) {
+                // Swipe droit - image précédente
+                prevImage();
+            }
+        });
 
-    // Fonctions pour gérer les images (utilisez vos fonctions existantes ou adaptez celles-ci)
-    function nextImage() {
-      // Utilisez votre logique existante pour l'image suivante
-      const nextButton = document.querySelector('.next-button');
-      if (nextButton) {
-        nextButton.click(); // Simulation du clic sur le bouton "suivant"
-      }
+        // Fonctions pour gérer les images
+        function nextImage() {
+            const nextButton = document.querySelector('.next-button');
+            if (nextButton && !isAnimating) {
+                nextButton.click();
+            }
+        }
+
+        function prevImage() {
+            const prevButton = document.querySelector('.prev-button');
+            if (prevButton && !isAnimating) {
+                prevButton.click();
+            }
+        }
+
+        // Variables pour le suivi du toucher
+        let touchStartX = 0;
+        let isSwiping = false;
+
+        // Amélioration de l'indicateur visuel pour le swipe
+        modal.addEventListener('touchstart', function(e) {
+            if (isAnimating) return;
+
+            touchStartX = e.touches[0].clientX;
+            isSwiping = true;
+        }, { passive: true }); // Utiliser passive: true pour de meilleures performances
+
+        modal.addEventListener('touchmove', function(e) {
+            if (!isSwiping || isAnimating) return;
+
+            const touchMoveX = e.touches[0].clientX;
+            const modalContent = document.querySelector('.modal-content');
+
+            if (modalContent) {
+                const offset = touchMoveX - touchStartX;
+
+                // Limiter le déplacement pour un effet de résistance
+                const limitedOffset = Math.min(100, Math.max(-100, offset));
+
+                // Appliquer un léger déplacement visuel pendant le swipe avec transition douce
+                modalContent.style.transition = 'transform 0.1s';
+                modalContent.style.transform = `translateX(${limitedOffset * 0.3}px)`;
+            }
+        }, { passive: true });
+
+        modal.addEventListener('touchend', function() {
+            if (!isSwiping) return;
+
+            isSwiping = false;
+
+            // Réinitialiser la position avec transition pour éviter le saut
+            const modalContent = document.querySelector('.modal-content');
+            if (modalContent) {
+                modalContent.style.transition = 'transform 0.2s';
+                modalContent.style.transform = '';
+
+                // Réinitialiser la transition après le retour
+                setTimeout(() => {
+                    modalContent.style.transition = '';
+                }, 200);
+            }
+        }, { passive: true });
     }
-
-    function prevImage() {
-      // Utilisez votre logique existante pour l'image précédente
-      const prevButton = document.querySelector('.prev-button');
-      if (prevButton) {
-        prevButton.click(); // Simulation du clic sur le bouton "précédent"
-      }
-    }
-
-    // Ajout d'un indicateur visuel pour le swipe (optionnel)
-    let touchStartX = 0;
-    let touchMoveX = 0;
-
-    modal.addEventListener('touchstart', function(e) {
-      touchStartX = e.touches[0].clientX;
-    }, false);
-
-    modal.addEventListener('touchmove', function(e) {
-      touchMoveX = e.touches[0].clientX;
-
-      // Calculer le déplacement
-      const modalContent = document.querySelector('.modal-content');
-      if (modalContent) {
-        const offset = touchMoveX - touchStartX;
-
-        // Limiter le déplacement pour un effet de résistance
-        const limitedOffset = Math.min(100, Math.max(-100, offset));
-
-        // Appliquer un léger déplacement visuel pendant le swipe
-        modalContent.style.transform = `translateX(${limitedOffset * 0.3}px)`;
-      }
-    }, false);
-
-    modal.addEventListener('touchend', function() {
-      // Réinitialiser la position
-      const modalContent = document.querySelector('.modal-content');
-      if (modalContent) {
-        modalContent.style.transform = '';
-      }
-    }, false);
-  }
 });
-
-// Add click event to each pottery card
-potteryCards.forEach((card, index) => {
-  card.addEventListener("click", function() {
-      modal.style.display = "block";
-      updateModalImage(index);
-      document.body.style.overflow = "hidden";
-
-      // Ajouter l'animation de l'indicateur de swipe
-      showSwipeHint();
-  });
-});
-
-// Fonction pour afficher l'indicateur de swipe
-function showSwipeHint() {
-  // Vérifier si l'utilisateur est sur mobile (vous pouvez ajuster cette condition selon vos besoins)
-  if (window.innerWidth <= 768) {  // Exemple pour un seuil de 768px
-      const swipeHint = document.querySelector('.swipe-hint');
-      if (swipeHint) {
-          swipeHint.classList.add('active');
-
-          // Supprimer la classe après l'animation pour qu'elle ne se répète pas
-          setTimeout(() => {
-              swipeHint.classList.remove('active');
-          }, 2000);
-      }
-  }
-}
