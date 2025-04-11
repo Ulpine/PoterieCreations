@@ -207,37 +207,6 @@
   }
 }
 
-/* Animation de sortie */
-@keyframes slideOutLeft {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-}
-
-@keyframes slideOutRight {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-}
-
-.slide-out-left {
-  animation: slideOutLeft 0.3s ease-in-out;
-}
-
-.slide-out-right {
-  animation: slideOutRight 0.3s ease-in-out;
-}
-
 @keyframes zoom {
   from {transform:scale(0)}
   to {transform:scale(1)}

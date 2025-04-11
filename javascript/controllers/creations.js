@@ -18,39 +18,41 @@ function updateModalImage(index, direction = null) {
   const img = potteryCards[index].querySelector(".pottery-image");
   const caption = potteryCards[index].querySelector("h3").textContent;
 
-  if (direction) {
-      isAnimating = true;
+  isAnimating = true;
 
-      // Animation de sortie
-      const outClass = direction === 'next' ? 'slide-out-left' : 'slide-out-right';
-      modalImg.classList.remove('slide-animation', 'slide-left', 'slide-right');
-      modalImg.classList.add(outClass);
+  // Masquer l'image temporairement pour éviter le flash
+  modalImg.style.opacity = 0;
 
-      // Après la sortie (0.3s), on change l'image et on fait l'entrée
-      setTimeout(() => {
-          modalImg.classList.remove(outClass);
-          modalImg.src = img.src;
-          captionText.textContent = caption;
-          currentImageIndex = index;
-          imageCounter.textContent = `Image ${index + 1} sur ${potteryCards.length}`;
-
-          const inClass = direction === 'next' ? 'slide-left' : 'slide-right';
-          modalImg.classList.add('slide-animation', inClass);
-
-          // Nettoyage après l'entrée
-          setTimeout(() => {
-              modalImg.classList.remove('slide-animation', inClass);
-              isAnimating = false;
-          }, 500); // temps de l'animation d'entrée
-      }, 300); // temps de l'animation de sortie
-  } else {
-      // Pas d'animation (ex: premier clic)
-      modalImg.src = img.src;
+  // Une fois que l'image est chargée, on fait l'animation
+  modalImg.onload = () => {
       captionText.textContent = caption;
       currentImageIndex = index;
       imageCounter.textContent = `Image ${index + 1} sur ${potteryCards.length}`;
-  }
+
+      // Préparer l'animation
+      modalImg.classList.remove('slide-left', 'slide-right', 'slide-animation');
+      void modalImg.offsetWidth; // force reflow
+
+      modalImg.classList.add('slide-animation');
+      if (direction === 'next') {
+          modalImg.classList.add('slide-left');
+      } else if (direction === 'prev') {
+          modalImg.classList.add('slide-right');
+      }
+
+      modalImg.style.opacity = 1;
+
+      // Fin d'animation
+      setTimeout(() => {
+          modalImg.classList.remove('slide-left', 'slide-right', 'slide-animation');
+          isAnimating = false;
+      }, 500);
+  };
+
+  // Déclenche le chargement
+  modalImg.src = img.src;
 }
+
 
 
 
