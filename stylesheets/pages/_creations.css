@@ -93,6 +93,17 @@
   max-height: 80vh;
   object-fit: contain;
   background-color: #A7BCB7;
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Ajoute une transition fluide */
+}
+
+.modal-content.swipe-left {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.modal-content.swipe-right {
+  transform: translateX(-100%);
+  opacity: 0;
 }
 
 .close-button {

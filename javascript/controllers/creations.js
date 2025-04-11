@@ -13,45 +13,35 @@ let isAnimating = false;
 
 // Function to update modal content
 function updateModalImage(index, direction = null) {
-  if (isAnimating || index === currentImageIndex) return;
+  if (isAnimating) return;
 
   const img = potteryCards[index].querySelector(".pottery-image");
   const caption = potteryCards[index].querySelector("h3").textContent;
 
-  isAnimating = true;
+  // Si direction existe, on ajoute un effet de translation
+  if (direction) {
+      modalImg.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
 
-  // Masquer l'image temporairement pour éviter le flash
-  modalImg.style.opacity = 0;
+      // Applique la translation en fonction de la direction
+      modalImg.style.transform = direction === 'next' ? 'translateX(100%)' : 'translateX(-100%)';
+      modalImg.style.opacity = '0';
 
-  // Une fois que l'image est chargée, on fait l'animation
-  modalImg.onload = () => {
-      captionText.textContent = caption;
-      currentImageIndex = index;
-      imageCounter.textContent = `Image ${index + 1} sur ${potteryCards.length}`;
-
-      // Préparer l'animation
-      modalImg.classList.remove('slide-left', 'slide-right', 'slide-animation');
-      void modalImg.offsetWidth; // force reflow
-
-      modalImg.classList.add('slide-animation');
-      if (direction === 'next') {
-          modalImg.classList.add('slide-left');
-      } else if (direction === 'prev') {
-          modalImg.classList.add('slide-right');
-      }
-
-      modalImg.style.opacity = 1;
-
-      // Fin d'animation
+      // Réinitialiser après l'animation
       setTimeout(() => {
-          modalImg.classList.remove('slide-left', 'slide-right', 'slide-animation');
-          isAnimating = false;
-      }, 500);
-  };
+          modalImg.style.transition = 'none'; // Enlève la transition après le changement
+          modalImg.style.transform = 'translateX(0)';
+          modalImg.style.opacity = '1';
+      }, 500); // Durée de l'animation
+  }
 
-  // Déclenche le chargement
   modalImg.src = img.src;
+  captionText.textContent = caption;
+  currentImageIndex = index;
+
+  // Update counter
+  imageCounter.textContent = `Image ${index + 1} sur ${potteryCards.length}`;
 }
+
 
 
 
