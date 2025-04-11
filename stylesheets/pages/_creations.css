@@ -123,10 +123,10 @@
 }
 
 /* Animation */
-.modal-content, #modalCaption {
-  animation-name: zoom;
-  animation-duration: 0.6s;
+.modal-opening .modal-content {
+  animation: zoom 0.6s;
 }
+
 
 /* Navigation buttons */
 .nav-button {

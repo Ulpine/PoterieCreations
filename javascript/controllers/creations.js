@@ -74,14 +74,20 @@ function showSwipeHint() {
 
 // Add click event to each pottery card - UNIQUEMENT UN ÉVÉNEMENT
 potteryCards.forEach((card, index) => {
-    card.addEventListener("click", function() {
-        modal.style.display = "block";
-        updateModalImage(index);
-        document.body.style.overflow = "hidden";
+  card.addEventListener("click", function() {
+    modal.classList.add("modal-opening");
+    modal.style.display = "block";
+    updateModalImage(index);
+    document.body.style.overflow = "hidden";
 
-        // Ajouter l'animation de l'indicateur de swipe
-        showSwipeHint();
-    });
+    // Retirer la classe après la durée de l'anim (600ms)
+    setTimeout(() => {
+        modal.classList.remove("modal-opening");
+    }, 600);
+
+    // Ajouter l'animation de l'indicateur de swipe
+    showSwipeHint();
+});
 });
 
 // Previous button click
