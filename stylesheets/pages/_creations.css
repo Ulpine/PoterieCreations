@@ -93,6 +93,7 @@
   max-height: 80vh;
   object-fit: contain;
   background-color: #A7BCB7;
+  animation: none !important;
 }
 
 .close-button {
