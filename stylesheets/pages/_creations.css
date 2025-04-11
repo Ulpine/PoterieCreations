@@ -258,3 +258,68 @@
     right: 10px;
   }
 }
+
+/* Ajoutez ces styles à votre fichier CSS existant */
+
+/* Améliorer l'expérience tactile */
+.modal-content {
+  transition: transform 0.3s ease;
+  touch-action: pan-y pinch-zoom; /* Optimiser pour le comportement tactile */
+}
+
+/* Indicateur de swipe - optionnel */
+.swipe-indicator {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.swipe-indicator.visible {
+  opacity: 1;
+}
+
+/* Rendre les boutons de navigation moins proéminents sur mobile */
+@media only screen and (max-width: 700px) {
+  .nav-button {
+    opacity: 0.4;
+    padding: 10px 14px;
+    font-size: 16px;
+  }
+
+  /* Rendre les boutons plus visibles au toucher */
+  .nav-button:active {
+    opacity: 0.8;
+  }
+}
+
+/* Style pour l'indicateur de swipe initial */
+@keyframes swipeHint {
+  0% { transform: translateX(-30px); opacity: 0; }
+  50% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(30px); opacity: 0; }
+}
+
+.swipe-hint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 40px;
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+
+.swipe-hint.active {
+  display: block;
+  animation: swipeHint 1.5s ease-in-out;
+}

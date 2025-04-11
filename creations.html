@@ -34,6 +34,7 @@
     <script src="./javascript/controllers/creations.js" defer></script>
     <script src="./javascript/controllers/creationsload.js" defer></script>
     <script src="./javascript/controllers/creations-pagination.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <!-- Structured data for better search results -->
     <script type="application/ld+json">
       {
@@ -97,6 +98,16 @@
         <span class="close-button" aria-label="Fermer la fenêtre">&times;</span>
         <button class="nav-button prev-button" aria-label="Image précédente">&lt;</button>
         <button class="nav-button next-button" aria-label="Image suivante">&gt;</button>
+
+        <!-- Ajoutez l'indicateur de swipe ici -->
+        <div class="swipe-indicator">Glissez pour naviguer</div>
+
+        <!-- Ajoutez l'animation de hint ici -->
+        <div class="swipe-hint">
+          <i class="fas fa-chevron-left"></i>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+
         <img id="modalImage" class="modal-content" alt="Création en poterie agrandie">
         <div id="modalCaption"></div>
         <div id="imageCounter"></div>
