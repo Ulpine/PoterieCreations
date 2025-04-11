@@ -13,36 +13,39 @@ let isAnimating = false;
 
 // Function to update modal content
 function updateModalImage(index, direction = null) {
-    // Ne pas changer d'image si une animation est déjà en cours
-    if (isAnimating) return;
+  if (isAnimating) return;
 
-    const img = potteryCards[index].querySelector(".pottery-image");
-    const caption = potteryCards[index].querySelector("h3").textContent;
+  const img = potteryCards[index].querySelector(".pottery-image");
+  const caption = potteryCards[index].querySelector("h3").textContent;
 
-    // Remove previous animation classes
-    modalImg.classList.remove('slide-left', 'slide-right', 'slide-animation');
+  if (direction) {
+      isAnimating = true;
 
-    // Trigger reflow to restart animation
-    void modalImg.offsetWidth;
+      // Ajoute l'animation d'abord
+      modalImg.classList.add('slide-animation', direction === 'next' ? 'slide-left' : 'slide-right');
 
-    // Add new animation class based on direction
-    if (direction) {
-        isAnimating = true;
-        modalImg.classList.add('slide-animation', direction === 'next' ? 'slide-left' : 'slide-right');
+      // Attends un peu avant de changer l'image (le temps que l'effet démarre visuellement)
+      setTimeout(() => {
+          modalImg.src = img.src;
+          captionText.textContent = caption;
+          currentImageIndex = index;
+          imageCounter.textContent = `Image ${index + 1} sur ${potteryCards.length}`;
+      }, 50); // test avec 50ms, ajuste si besoin
 
-        // Réinitialiser le flag d'animation après la fin de l'animation
-        setTimeout(() => {
-            isAnimating = false;
-        }, 300); // Durée de votre animation CSS (ajustez si nécessaire)
-    }
-
-    modalImg.src = img.src;
-    captionText.textContent = caption;
-    currentImageIndex = index;
-
-    // Update counter
-    imageCounter.textContent = `Image ${index + 1} sur ${potteryCards.length}`;
+      // Enlève l'animation une fois terminée
+      setTimeout(() => {
+          modalImg.classList.remove('slide-animation', 'slide-left', 'slide-right');
+          isAnimating = false;
+      }, 500); // correspond à ta animation-duration: 0.5s;
+  } else {
+      // Pas d'animation → on change tout de suite
+      modalImg.src = img.src;
+      captionText.textContent = caption;
+      currentImageIndex = index;
+      imageCounter.textContent = `Image ${index + 1} sur ${potteryCards.length}`;
+  }
 }
+
 
 // Fonction pour afficher l'indicateur de swipe
 function showSwipeHint() {
