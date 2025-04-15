@@ -11,16 +11,19 @@ const potteryCards = document.querySelectorAll(".pottery-card");
 let currentImageIndex = 0;
 let isAnimating = false;
 
-// Fonction de debug pour tester les boutons
-function testButtons() {
-  console.log("prevButton:", prevButton);
-  console.log("nextButton:", nextButton);
-
-  // Test des gestionnaires d'événements
+function initializeButtons() {
+  // Initialisation silencieuse des boutons
   if (prevButton) {
-    console.log("Test clic sur bouton précédent");
-    prevButton.addEventListener("click", function() {
-      console.log("Bouton précédent cliqué!");
+    prevButton.addEventListener("click", function(e) {
+      e.stopPropagation();
+      changeImage('prev');
+    });
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener("click", function(e) {
+      e.stopPropagation();
+      changeImage('next');
     });
   }
 }
@@ -192,7 +195,7 @@ document.addEventListener("keydown", function(e) {
 // Initialisation de Hammer.js pour la gestion tactile
 document.addEventListener('DOMContentLoaded', function() {
   // Exécuter le test des boutons
-  testButtons();
+  initializeButtons();
 
   // Vérifier si Hammer.js est disponible
   if (typeof Hammer !== 'undefined') {
