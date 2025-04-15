@@ -167,18 +167,18 @@
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 4px;
-  z-index: 1001; /* S'assurer que les boutons sont au-dessus */
+  z-index: 1001;
 }
 
 .nav-button:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.prev-button {
+.modal-prev-button {
   left: 20px;
 }
 
-.next-button {
+.modal-next-button {
   right: 20px;
 }
 
@@ -268,10 +268,10 @@
     padding: 12px 16px;
     font-size: 18px;
   }
-  .prev-button {
+  .modal-prev-button {
     left: 10px;
   }
-  .next-button {
+  .modal-next-button {
     right: 10px;
   }
 }

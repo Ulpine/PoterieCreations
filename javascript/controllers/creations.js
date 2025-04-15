@@ -4,8 +4,8 @@ const modalImg = document.getElementById("modalImage");
 const captionText = document.getElementById("modalCaption");
 const imageCounter = document.getElementById("imageCounter");
 const closeButton = document.querySelector(".close-button");
-const prevButton = document.querySelector(".prev-button");
-const nextButton = document.querySelector(".next-button");
+const prevButton = document.querySelector(".modal-prev-button");
+const nextButton = document.querySelector(".modal-next-button");
 const potteryCards = document.querySelectorAll(".pottery-card");
 
 let currentImageIndex = 0;
@@ -143,7 +143,7 @@ function showSwipeHint() {
 // Ces événements doivent être correctement configurés
 if (prevButton) {
   prevButton.addEventListener("click", function(e) {
-    console.log("Bouton précédent cliqué"); // Pour déboguer
+    console.log("Bouton modal précédent cliqué");
     e.stopPropagation();
     changeImage('prev');
   });
@@ -151,7 +151,7 @@ if (prevButton) {
 
 if (nextButton) {
   nextButton.addEventListener("click", function(e) {
-    console.log("Bouton suivant cliqué"); // Pour déboguer
+    console.log("Bouton modal suivant cliqué");
     e.stopPropagation();
     changeImage('next');
   });
