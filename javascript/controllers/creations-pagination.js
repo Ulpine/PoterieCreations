@@ -98,3 +98,52 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+function handleWindowResize() {
+  const isMobile = window.innerWidth <= 768;
+
+  // Sur mobile
+  if (isMobile) {
+    // Supprimer la pagination si elle existe
+    const paginationContainer = document.querySelector('.pagination-container');
+    if (paginationContainer) {
+      paginationContainer.remove();
+    }
+
+    // Afficher toutes les cartes
+    allCards.forEach(card => {
+      card.style.display = '';
+    });
+  } else {
+    // Sur desktop - réactiver la pagination
+    createPagination();
+    // Montrer la première page ou la page actuelle
+    const activePage = document.querySelector('.pagination-button.active');
+    showPage(activePage ? parseInt(activePage.dataset.page) : 1);
+  }
+}
+
+// Appeler la fonction au chargement et lors du redimensionnement
+handleWindowResize();
+window.addEventListener('resize', handleWindowResize);
+
+// Ajouter à la fin du fichier
+function syncGalleryState() {
+  const allCards = Array.from(document.querySelectorAll('.pottery-card'));
+  // S'assurer que les cartes visibles sont bien détectées
+  allCards.forEach(card => {
+    if (window.getComputedStyle(card).display !== 'none') {
+      card.classList.add('visible');
+    } else {
+      card.classList.remove('visible');
+    }
+  });
+}
+
+// Appeler cette fonction après chaque changement de page
+function showPage(pageNumber) {
+  // Code existant...
+
+  // Ajouter ceci à la fin:
+  syncGalleryState();
+}

@@ -1,3 +1,4 @@
+//javascript/controllers/creations.js
 // Get all the elements
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImage");
@@ -7,9 +8,30 @@ const closeButton = document.querySelector(".close-button");
 const prevButton = document.querySelector(".modal-prev-button");
 const nextButton = document.querySelector(".modal-next-button");
 const potteryCards = document.querySelectorAll(".pottery-card");
-
+// Détection des appareils tactiles
+const isTouchDevice = ('ontouchstart' in window) ||
+                      (navigator.maxTouchPoints > 0) ||
+                      (navigator.msMaxTouchPoints > 0);
+                      
 let currentImageIndex = 0;
 let isAnimating = false;
+
+
+
+
+// Appliquer des optimisations spécifiques aux appareils tactiles
+if (isTouchDevice) {
+  document.documentElement.classList.add('touch-device');
+
+  // Réduire la complexité des animations sur mobile
+  const style = document.createElement('style');
+  style.textContent = `
+    .modal-content {
+      transition-duration: 0.2s !important;
+    }
+  `;
+  document.head.appendChild(style);
+}
 
 function initializeButtons() {
   // Initialisation silencieuse des boutons
@@ -28,10 +50,14 @@ function initializeButtons() {
   }
 }
 
-// Fonction simplifiée pour changer d'image avec animation
+// Dans javascript/controllers/creations.js
 function changeImage(direction) {
   if (isAnimating) return;
   isAnimating = true;
+
+  // Désactiver temporairement les événements pour éviter les doubles clics
+  prevButton.disabled = true;
+  nextButton.disabled = true;
 
   // Calculer le nouvel index
   let newIndex;
@@ -45,55 +71,64 @@ function changeImage(direction) {
   const newImg = potteryCards[newIndex].querySelector(".pottery-image");
   const newCaption = potteryCards[newIndex].querySelector("h3").textContent;
 
-  // 1. Faire disparaître l'image actuelle avec animation
+  // Précharger la nouvelle image pour éviter le flash
+  const tempImg = new Image();
+  tempImg.src = newImg.src;
+  tempImg.onload = function() {
+    // Une fois préchargée, procéder à l'animation
+    animateImageChange(direction, newImg.src, newCaption, newIndex);
+  };
+
+  // Si l'image est déjà en cache ou met trop de temps, continuer quand même
+  setTimeout(() => {
+    if (isAnimating) {
+      animateImageChange(direction, newImg.src, newCaption, newIndex);
+    }
+  }, 100);
+}
+
+function animateImageChange(direction, newSrc, newCaption, newIndex) {
+  // 1. Faire disparaître l'image actuelle avec une animation plus douce
+  modalImg.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+
   if (direction === 'next') {
-    // L'image actuelle sort vers la gauche
-    modalImg.style.transition = 'all 0.4s ease';
-    modalImg.style.transform = 'translateX(-100%)';
-    modalImg.style.opacity = '0';
+    modalImg.style.transform = 'translateX(-50px)';
   } else {
-    // L'image actuelle sort vers la droite
-    modalImg.style.transition = 'all 0.4s ease';
-    modalImg.style.transform = 'translateX(100%)';
-    modalImg.style.opacity = '0';
+    modalImg.style.transform = 'translateX(50px)';
   }
+  modalImg.style.opacity = '0';
 
   // 2. Attendre que l'animation de sortie soit terminée
   setTimeout(() => {
     // Mettre à jour la source et le texte
-    modalImg.src = newImg.src;
+    modalImg.src = newSrc;
     captionText.textContent = newCaption;
     currentImageIndex = newIndex;
+
+    // Positionner la nouvelle image pour l'animation d'entrée
+    if (direction === 'next') {
+      modalImg.style.transform = 'translateX(50px)';
+    } else {
+      modalImg.style.transform = 'translateX(-50px)';
+    }
 
     // Mettre à jour le compteur
     imageCounter.textContent = `Image ${newIndex + 1} sur ${potteryCards.length}`;
 
-    // Positionner la nouvelle image hors écran avant de l'animer
-    if (direction === 'next') {
-      // La nouvelle image vient de la droite
-      modalImg.style.transition = 'none'; // Désactiver les transitions pour le positionnement initial
-      modalImg.style.transform = 'translateX(100%)';
-      modalImg.style.opacity = '0';
-    } else {
-      // La nouvelle image vient de la gauche
-      modalImg.style.transition = 'none'; // Désactiver les transitions pour le positionnement initial
-      modalImg.style.transform = 'translateX(-100%)';
-      modalImg.style.opacity = '0';
-    }
-
-    // Force le navigateur à appliquer ces styles avant d'ajouter l'animation
+    // Forcer un repaint avant d'animer
     void modalImg.offsetWidth;
 
-    // 3. Animer l'entrée de la nouvelle image
-    modalImg.style.transition = 'all 0.4s ease';
+    // Animer l'entrée de la nouvelle image
     modalImg.style.transform = 'translateX(0)';
     modalImg.style.opacity = '1';
 
-    // 4. Nettoyer et terminer
+    // Nettoyer et terminer
     setTimeout(() => {
       isAnimating = false;
-    }, 400);
-  }, 400);
+      prevButton.disabled = false;
+      nextButton.disabled = false;
+    }, 300);
+  }, 300);
 }
 
 // Attache l'événement de clic à chaque carte
@@ -197,30 +232,35 @@ document.addEventListener('DOMContentLoaded', function() {
   // Exécuter le test des boutons
   initializeButtons();
 
-  // Vérifier si Hammer.js est disponible
-  if (typeof Hammer !== 'undefined') {
-    const modalElement = document.getElementById('imageModal');
+// Optimisations pour Hammer.js - dans la partie DOMContentLoaded
+if (typeof Hammer !== 'undefined') {
+  const modalElement = document.getElementById('imageModal');
 
-    if (modalElement) {
-      const hammer = new Hammer(modalElement);
+  if (modalElement) {
+    const hammer = new Hammer(modalElement);
 
-      // Configuration pour détection horizontale
-      hammer.get('swipe').set({
-        direction: Hammer.DIRECTION_HORIZONTAL,
-        threshold: 10,
-        velocity: 0.3
-      });
+    // Configuration optimisée pour le swipe
+    hammer.get('swipe').set({
+      direction: Hammer.DIRECTION_HORIZONTAL,
+      threshold: 20,
+      velocity: 0.3
+    });
 
-      // Gestionnaire d'événements pour le swipe
-      hammer.on('swipeleft', function() {
+    // Désactiver le pan vertical pour éviter les conflits
+    hammer.get('pan').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+
+    // Gestionnaires d'événements pour le swipe
+    hammer.on('swipeleft', function(ev) {
+      if (!isAnimating) {
         changeImage('next');
-      });
+      }
+    });
 
-      hammer.on('swiperight', function() {
+    hammer.on('swiperight', function(ev) {
+      if (!isAnimating) {
         changeImage('prev');
-      });
-    }
-  } else {
-    console.warn("Hammer.js n'est pas chargé. La navigation tactile ne fonctionnera pas.");
+      }
+    });
   }
+}
 });

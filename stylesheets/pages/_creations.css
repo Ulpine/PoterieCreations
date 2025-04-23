@@ -92,7 +92,10 @@
   object-fit: contain;
   background-color: transparent;
   opacity: 1;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 
 /* Classes pour les animations de transition */
@@ -100,7 +103,7 @@
   opacity: 0;
 }
 
-.slide-from-right {
+/* .slide-from-right {
   transform: translateX(100%);
   opacity: 0;
 }
@@ -118,7 +121,7 @@
 .slide-to-left {
   transform: translateX(-100%);
   opacity: 0;
-}
+} */
 
 /* Bouton de fermeture du modal */
 .close-button {
@@ -150,7 +153,7 @@
 }
 
 /* Animation d'ouverture du modal */
-.modal-opening .modal-content {
+.modal-opening {
   animation: zoom 0.6s;
 }
 
@@ -279,10 +282,11 @@
 /* Optimisations tactiles */
 .modal-content {
   touch-action: pan-y pinch-zoom;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Indicateur de swipe */
-.swipe-indicator {
+/* .swipe-indicator {
   position: absolute;
   bottom: 60px;
   left: 50%;
@@ -298,7 +302,7 @@
 
 .swipe-indicator.visible {
   opacity: 1;
-}
+} */
 
 /* Style optimisé pour mobile */
 @media only screen and (max-width: 700px) {
