@@ -105,7 +105,7 @@ h2 {
   /* font-family: 'Bangers', cursive; */
   font-size: 48px;
   color: #1D499B;
-  text-shadow: 2px 2px 0 #000;
+  /* text-shadow: 2px 2px 0 #000; */
   letter-spacing: 2px;
   transform: rotate(-2deg);
   margin-bottom: 40px !important;
@@ -166,7 +166,7 @@ h2 {
 
 .comic-btn {
   /* font-family: 'Bangers', cursive; */
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
   letter-spacing: 1px;
   transform: rotate(-2deg);
   transition: all 0.3s ease;

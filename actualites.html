@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-        <!-- Google tag (gtag.js) -->
+<head>
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WGV2RVXEQQ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-WGV2RVXEQQ');
     </script>
     <meta charset="UTF-8">
@@ -38,98 +37,164 @@
     <meta property="og:image" content="https://www.poterie-creations.fr/images/actualites/Stage%20enfants%20avril.jpg">
     <meta property="og:url" content="https://www.poterie-creations.fr/actualites">
     <meta property="og:type" content="website">
-  </head>
+</head>
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg" aria-label="Navigation principale">
-      <div class="container">
-        <div class="navbar-brand">
-          <a href="./" title="Accueil Poterie Créations">
-            <img src="images/logo-poterie.jpg" style="height: 100px; width: 200px;" class="logo rounded-3 shadow" alt="Logo Poterie Créations - Atelier de céramique à Bruz">
-          </a>
+    <header>
+        <nav class="navbar navbar-expand-lg" aria-label="Navigation principale">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="./" title="Accueil Poterie Créations">
+                        <img src="images/logo-poterie.jpg" style="height: 100px; width: 200px;" class="logo rounded-3 shadow" alt="Logo Poterie Créations - Atelier de céramique à Bruz">
+                    </a>
+                </div>
+                <div class="burger-menu" aria-label="Menu mobile">
+                    <div class="burger-bar"></div>
+                    <div class="burger-bar"></div>
+                    <div class="burger-bar"></div>
+                </div>
+                <div class="navbar-menu">
+                    <a href="./" class="nav-link">Accueil</a>
+                    <a href="./actualites" class="nav-link">Actualités</a>
+                    <a href="./creations" class="nav-link">Créations</a>
+                    <a href="./blog" class="nav-link">Blog</a>
+                    <a href="./a_propos" class="nav-link">A propos</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- En-tête de la page -->
+        <div class="page-header">
+            <h1 class="text-center">Les dates à ne pas rater</h1>
+            <!-- <h4>Tous nos stages ont lieu pendant les périodes scolaires, les dates apparaitront prochainement, soyez patients...</h4> -->
         </div>
-        <div class="burger-menu" aria-label="Menu mobile">
-          <div class="burger-bar"></div>
-          <div class="burger-bar"></div>
-          <div class="burger-bar"></div>
+
+        <div class="events-feed">
+            <!-- Section Stage Enfants Été -->
+            <div class="event-card summer-camp-card">
+                <div class="card-header">
+                    <h2>Stage enfants cet été (7-14ans)</h2>
+                </div>
+
+                <div class="months-container">
+                    <div class="month-item">
+                        <h3>Juillet</h3>
+                        <div class="event-details">
+                            <div class="date-info">
+                                <span>7-8-9 juillet 2025</span>
+                                <span>de 10h à 12h</span>
+                            </div>
+                            <div class="price-info">
+                                <span>40€ pour les 3 matinées</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="month-item">
+                        <h3>Août</h3>
+                        <div class="event-details">
+                            <div class="date-info">
+                                <span>27-28-29 août 2025</span>
+                                <span>de 10h à 12h</span>
+                            </div>
+                            <div class="price-info">
+                                <span>40€ pour les 3 matinées</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact">
+                    <h3>Inscriptions</h3>
+                    <p>Pour vous inscrire, contactez Marie :</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <p class="contact-text">
+                                <a href="tel:0750256453" class="contact-highlight">07 50 25 64 53</a>
+                            </p>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <p class="contact-text">
+                                <a href="mailto:poteriecreationsbruz@gmail.com" class="contact-highlight">poteriecreationsbruz@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Annonce Forum des Associations -->
+            <div class="event-card forum-announcement">
+                <div class="event-content">
+                    <h3>Forum des Associations</h3>
+                    <div class="event-description">
+                        <p class="text-center">Venez nous rencontrer au forum des associations le <strong>samedi 6 septembre 2025</strong> le matin</p>
+                        <p class="note text-center">(date à confirmer !)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galerie Stage Avril -->
+            <a href="./images/actualites/Stage enfant avril/L'atelier.jpg" class="event-card event-gallery" data-gallery="stage-avril">
+                <div class="event-image">
+                    <img src="./images/actualites/Stage enfants avril.jpg" alt="Image donnant les dates du stage pour enfants du mois d'avril">
+                </div>
+                <div class="event-content">
+                    <h3 class="text-center">Stages enfants du mois d'avril</h3>
+                    <div class="event-details">
+                        <h4 class="text-center bold">Vous pouvez cliquer pour voir les photos</h4>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Images cachées pour la galerie -->
+            <a href="./images/actualites/Stage enfant avril/Conseils de chef.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
+            <a href="./images/actualites/Stage enfant avril/Créations des enfants.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
+            <a href="./images/actualites/Stage enfant avril/Deux enfants découvrent le modelage.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
+            <a href="./images/actualites/Stage enfant avril/Deux jeunes à la poterie.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
+            <a href="./images/actualites/Stage enfant avril/Stage découverte.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
+            <a href="./images/actualites/Stage enfant avril/un poisson peut etre.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
+            <a href="./images/actualites/Stage enfant avril/Céations2.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
+            <a href="./images/actualites/Stage enfants avril.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
         </div>
-        <div class="navbar-menu">
-          <a href="./" class="nav-link">Accueil</a>
-          <a href="./actualites" class="nav-link">Actualités</a>
-          <a href="./creations" class="nav-link">Créations</a>
-          <a href="./blog" class="nav-link">Blog</a>
-          <a href="./a_propos" class="nav-link">A propos</a>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row text-center text-md-start align-items-center">
+                <!-- Adresse avec microdata -->
+                <div class="col-12 col-md-4 mb-3 mb-md-0" itemscope itemtype="http://schema.org/NonprofitOrganization">
+                    <span itemprop="name">Association Poterie Créations</span><br>
+                    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        <span itemprop="streetAddress">10 Av. du Général de Gaulle</span><br>
+                        <span itemprop="postalCode">35170</span> <span itemprop="addressLocality">Bruz</span>
+                    </div>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="col-12 col-md-4 mb-3 mb-md-0 d-flex justify-content-center">
+                    <div class="footer-links-reseaux">
+                        <a href="https://www.instagram.com/poterie_creationsbruz?igsh=cHl2M2JpemRoaDI3" target="_blank" rel="noopener" title="Suivez-nous sur Instagram"><i class="fab fa-instagram fa-2x"></i><span class="visually-hidden">Instagram</span></a>
+                        <a href="https://www.facebook.com/share/18Yw6rktqJ/?mibextid=LQQJ4d" target="_blank" rel="noopener" title="Suivez-nous sur Facebook"><i class="fab fa-facebook fa-2x"></i><span class="visually-hidden">Facebook</span></a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
+                    <div class="footer-links-contact">
+                        <a href="mailto:poteriecreationsbruz@gmail.com" title="Contactez-nous par email"><i class="fa-regular fa-envelope fa-2x"></i><span class="visually-hidden">Email</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mentions légales -->
+            <div class="mentions text-center mt-3">
+                <a href="./mentions_legales" class="text-decoration-none text-muted" title="Mentions légales">Mentions légales</a> |
+                <a href="./plan-du-site" class="text-decoration-none text-muted" title="Plan du site">Plan du site</a>
+            </div>
         </div>
-      </div>
-    </nav>
-  </header>
-
-<h1 class="text-center">Les dates à ne pas rater</h1>
-<h4>Tous nos stages ont lieu pendant les périodes scolaires, les dates apparaitront prochainement, soyez patients...</h4>
-
-
-<div class="events-feed">
-  <a href="./images/actualites/Stage enfant avril/L'atelier.jpg" class="event-card event-gallery" data-gallery="stage-avril">
-    <div class="event-image">
-      <img src="./images/actualites/Stage enfants avril.jpg" alt="Image donnant les dates du stage pour enfants du mois d'avril">
-    </div>
-    <div class="event-content">
-        <h2>Stages enfants du mois d'avril</h2>
-        <div class="event-details">
-            <span class="location text-center">📍 10 Av. du Général de Gaulle 35170 Bruz</span>
-            <span class="text-center">Vous pouvez cliquer pour voir les photos</span>
-          </div>
-    </div>
-  </a>
-
-  <!-- Les autres images de la galerie -->
-  <a href="./images/actualites/Stage enfant avril/Conseils de chef.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
-  <a href="./images/actualites/Stage enfant avril/Créations des enfants.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
-  <a href="./images/actualites/Stage enfant avril/Deux enfants découvrent le modelage.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
-  <a href="./images/actualites/Stage enfant avril/Deux jeunes à la poterie.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
-  <a href="./images/actualites/Stage enfant avril/Stage découverte.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
-  <a href="./images/actualites/Stage enfant avril/un poisson peut etre.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
-  <a href="./images/actualites/Stage enfant avril/Céations2.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
-  <a href="./images/actualites/Stage enfants avril.jpg" class="event-gallery" data-gallery="stage-avril" style="display: none;"></a>
-</div>
-
-<footer class="footer">
-  <div class="container">
-    <div class="row text-center text-md-start align-items-center">
-
-      <!-- Adresse avec microdata -->
-      <div class="col-12 col-md-4 mb-3 mb-md-0" itemscope itemtype="http://schema.org/NonprofitOrganization">
-        <span itemprop="name">Association Poterie Créations</span><br>
-        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-          <span itemprop="streetAddress">10 Av. du Général de Gaulle</span><br>
-          <span itemprop="postalCode">35170</span> <span itemprop="addressLocality">Bruz</span>
-        </div>
-      </div>
-
-      <!-- Réseaux sociaux -->
-      <div class="col-12 col-md-4 mb-3 mb-md-0 d-flex justify-content-center">
-        <div class="footer-links-reseaux">
-          <a href="https://www.instagram.com/poterie_creationsbruz?igsh=cHl2M2JpemRoaDI3" target="_blank" rel="noopener" title="Suivez-nous sur Instagram"><i class="fab fa-instagram fa-2x"></i><span class="visually-hidden">Instagram</span></a>
-          <a href="https://www.facebook.com/share/18Yw6rktqJ/?mibextid=LQQJ4d" target="_blank" rel="noopener" title="Suivez-nous sur Facebook"><i class="fab fa-facebook fa-2x"></i><span class="visually-hidden">Facebook</span></a>
-        </div>
-      </div>
-
-      <!-- Contact -->
-      <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end">
-        <div class="footer-links-contact">
-          <a href="mailto:poteriecreationsbruz@gmail.com" title="Contactez-nous par email"><i class="fa-regular fa-envelope fa-2x"></i><span class="visually-hidden">Email</span></a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Mentions légales -->
-    <div class="mentions text-center mt-3">
-      <a href="./mentions_legales" class="text-decoration-none text-muted" title="Mentions légales">Mentions légales</a> |
-      <a href="./plan-du-site" class="text-decoration-none text-muted" title="Plan du site">Plan du site</a>
-    </div>
-  </div>
-</footer>
-
+    </footer>
 </body>
 </html>
