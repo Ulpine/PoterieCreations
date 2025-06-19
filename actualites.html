@@ -62,76 +62,51 @@
             </div>
         </nav>
     </header>
-
     <main>
+          <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+            <span class="close-modal">&times;</span>
+            <div class="modal-content">
+              <img id="modalImage" src="" alt="">
+            </div>
+          </div>
         <!-- En-tête de la page -->
         <div class="page-header">
-            <h1 class="text-center">Les dates à ne pas rater</h1>
-            <!-- <h4>Tous nos stages ont lieu pendant les périodes scolaires, les dates apparaitront prochainement, soyez patients...</h4> -->
+            <h1>Les dates à ne pas rater</h1>
         </div>
 
         <div class="events-feed">
-            <!-- Section Stage Enfants Été -->
-            <div class="event-card summer-camp-card">
-                <div class="card-header">
-                    <h3>Stage enfants cet été (7-14ans)</h2>
+            <!-- Carte principale réorganisée -->
+            <div class="main-event-card">
+                <div class="event-image">
+                    <img src="./images/Stageenfant.jpg" alt="Image donnant les dates du stage pour enfants du mois d'avril" class="clickable-image" onclick="openImageModal(this)">
                 </div>
 
-                <div class="months-container">
-                    <div class="month-item">
-                        <h3>Juillet</h3>
-                        <div class="event-details">
-                            <div class="date-info">
-                                <span>7-8-9 juillet 2025</span>
+                <div class="main-event-content">
+                    <h2 class="event-title">Stage enfants cet été (7-14ans)</h2>
+
+                    <div class="dates-container">
+                        <div class="date-section">
+                            <h3>Juillet</h3>
+                            <div class="date-details">
+                                <span><strong>7, 8 et 9 juillet 2025</strong></span>
                                 <span>de 10h à 12h</span>
-                            </div>
-                            <div class="price-info">
-                                <span>40€ pour les 3 matinées</span>
+                                <span><strong>Tarif :</strong> 40€ pour les 3 matinées</span>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="month-item">
-                        <h3>Août</h3>
-                        <div class="event-details">
-                            <div class="date-info">
-                                <span>27-28-29 août 2025</span>
+                        <div class="date-section">
+                            <h3>Août</h3>
+                            <div class="date-details">
+                                <span><strong>27, 28 et 29 août 2025</strong></span>
                                 <span>de 10h à 12h</span>
-                            </div>
-                            <div class="price-info">
-                                <span>40€ pour les 3 matinées</span>
+                                <span><strong>Tarif :</strong> 40€ pour les 3 matinées</span>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="contact">
-                    <h3>Inscriptions</h3>
-                    <p>Pour vous inscrire, contactez Marie :</p>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <span class="contact-icon">📞</span>
-                            <p class="contact-text">
-                                <a href="tel:0750256453" class="contact-highlight">07 50 25 64 53</a>
-                            </p>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">✉️</span>
-                            <p class="contact-text">
-                                <a href="mailto:poteriecreationsbruz@gmail.com" class="contact-highlight">poteriecreationsbruz@gmail.com</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Annonce Forum des Associations -->
-            <div class="event-card forum-announcement">
-                <div class="event-content">
-                    <h3>Forum des Associations</h3>
-                    <div class="event-description">
-                        <p class="text-center">Venez nous rencontrer au forum des associations le <strong>samedi 6 septembre 2025</strong> le matin</p>
-                        <p class="note text-center">(date à confirmer !)</p>
+                    <div class="contact-section">
+                        <p><strong>Inscriptions :</strong> Contactez Marie au 07 50 25 64 53<br>
+                        ou par mail : poteriecreationsbruz@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -142,7 +117,7 @@
                     <img src="./images/actualites/Stage enfants avril.jpg" alt="Image donnant les dates du stage pour enfants du mois d'avril">
                 </div>
                 <div class="event-content">
-                    <h3 class="text-center">Stages enfants du mois d'avril</h3>
+                    <h2 class="event-title">Stages enfants du mois d'avril</h2>
                     <div class="event-details">
                         <h4 class="text-center bold">Vous pouvez cliquer pour voir les photos</h4>
                     </div>
