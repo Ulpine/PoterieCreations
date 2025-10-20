@@ -39,42 +39,92 @@
     <meta property="og:type" content="website">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg" aria-label="Navigation principale">
-            <div class="container">
-                <div class="navbar-brand">
-                    <a href="./" title="Accueil Poterie Créations">
-                        <img src="images/logo-poterie.jpg" style="height: 100px; width: 200px;" class="logo rounded-3 shadow" alt="Logo Poterie Créations - Atelier de céramique à Bruz">
-                    </a>
-                </div>
-                <div class="burger-menu" aria-label="Menu mobile">
-                    <div class="burger-bar"></div>
-                    <div class="burger-bar"></div>
-                    <div class="burger-bar"></div>
-                </div>
-                <div class="navbar-menu">
-                    <a href="./" class="nav-link">Accueil</a>
-                    <a href="./actualites" class="nav-link">Actualités</a>
-                    <a href="./creations" class="nav-link">Créations</a>
-                    <a href="./blog" class="nav-link">Blog</a>
-                    <a href="./a_propos" class="nav-link">A propos</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main>
-          <div id="imageModal" class="image-modal" onclick="closeImageModal()">
-            <span class="close-modal">&times;</span>
-            <div class="modal-content">
-              <img id="modalImage" src="" alt="">
-            </div>
+  <header>
+      <nav class="navbar navbar-expand-lg" aria-label="Navigation principale">
+          <div class="container">
+              <div class="navbar-brand">
+                  <a href="./" title="Accueil Poterie Créations">
+                      <img src="images/logo-poterie.jpg" style="height: 100px; width: 200px;" class="logo rounded-3 shadow" alt="Logo Poterie Créations - Atelier de céramique à Bruz">
+                  </a>
+              </div>
+              <div class="burger-menu" aria-label="Menu mobile">
+                  <div class="burger-bar"></div>
+                  <div class="burger-bar"></div>
+                  <div class="burger-bar"></div>
+              </div>
+              <div class="navbar-menu">
+                  <a href="./" class="nav-link">Accueil</a>
+                  <a href="./actualites" class="nav-link">Actualités</a>
+                  <a href="./creations" class="nav-link">Créations</a>
+                  <a href="./blog" class="nav-link">Blog</a>
+                  <a href="./a_propos" class="nav-link">A propos</a>
+              </div>
           </div>
-        <!-- En-tête de la page -->
-        <div class="page-header">
-            <h1>Les dates à ne pas rater</h1>
-        </div>
+      </nav>
+  </header>
 
-        <div class="events-feed">
+  <main>
+    <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+      <span class="close-modal">&times;</span>
+      <div class="modal-content">
+        <img id="modalImage" src="" alt="">
+      </div>
+    </div>
+    <!-- En-tête de la page -->
+    <div class="page-header">
+        <h1>Les dates à ne pas rater</h1>
+    </div>
+
+    <div class="events-feed">
+    <!-- Carte principale réorganisée -->
+<div class="main-event-card">
+  <div class="event-image">
+    <!-- Image principale visible -->
+    <a href="./images/exponovembre.jpg"
+       class="event-gallery"
+       data-gallery="expo-novembre">
+      <img src="./images/exponovembre.jpg"
+           alt="Affiche des stages et de l’exposition du mois de novembre 2025"
+           class="clickable-image">
+    </a>
+
+    <!-- Deuxième image pour la galerie -->
+    <a href="./images/stagesnovembre.jpg"
+       class="event-gallery"
+       data-gallery="expo-novembre"
+       style="display:none;"></a>
+  </div>
+
+  <div class="event-content">
+    <h2 class="event-title">Stages et Exposition - 22 & 23 novembre 2025</h2>
+    <h4 class="event-subtitle">Entrée libre et gratuite</h4>
+
+    <div class="event-description">
+      <p style="text-align: center;">Rejoignez-nous à la Halle Pagnol à Bruz, pour un week-end de découverte et de créativité autour du modelage et de la peinture sur meuble.</p>
+    </div>
+
+    <div class="event-details">
+      <p><strong>Les inscriptions aux ateliers se font par e-mail :</strong></p>
+
+      <div class="modelage">
+        <h3>Atelier modelage</h3>
+        <p>
+          📧 <a href="mailto:poteriecreationsbruz@gmail.com"
+                class="email-link">poteriecreationsbruz@gmail.com</a><br>
+        </p>
+      </div>
+
+      <div class="peinture">
+        <h3>Atelier peinture sur meuble</h3>
+        <p>
+          📧 <a href="mailto:acgroisne@gmail.com"
+                class="email-link">acgroisne@gmail.com</a><br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
             <!-- Carte principale réorganisée -->
           <div class="main-event-card">
             <div class="event-image">
@@ -167,7 +217,7 @@
             <!-- Galerie Stage Avril -->
             <a href="./images/actualites/Stage enfant avril/L'atelier.jpg" class="event-card event-gallery" data-gallery="stage-avril">
                 <div class="event-image">
-                    <img src="./images/actualites/Stage enfants avril.jpg" alt="Image donnant les dates du stage pour enfants du mois d'avril">
+                    <img src="./images/actualites/Stage enfants avril.jpg" alt="Image donnant les dates du stage pour enfants du mois d'avril" class="clickable-image">
                 </div>
                 <div class="event-content">
                     <h2 class="event-title">Stages enfants du mois d'avril 2025</h2>
